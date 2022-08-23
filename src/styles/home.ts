@@ -21,6 +21,7 @@ const Wrapper = styled('div', {
 const Paragraph = styled('span', {
   color: '$gray400',
   fontSize: '$3',
+  lineHeight: '$3',
 })
 
 export { Container, Content, Wrapper, Paragraph }

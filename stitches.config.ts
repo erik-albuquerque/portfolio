@@ -18,6 +18,13 @@ const config: ConfigType = {
     fonts: {
       inter: 'Inter, sans-serif',
     },
+    lineHeights: {
+      1: '1rem', // 16px
+      2: '1.125rem', // 18px
+      3: '1.5rem', // 24px
+      4: '1.75rem', // 28px
+      5: '2rem', // 32px
+    },
     fontSizes: {
       1: '0.75rem', // 12px
       2: '0.875rem', // 14px
