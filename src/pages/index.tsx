@@ -1,3 +1,4 @@
+import { Header } from '@components'
 import type { NextPage } from 'next'
 import { styled } from '../../stitches.config'
 
@@ -6,7 +7,12 @@ const H1 = styled('h1', {
 })
 
 const Home: NextPage = () => {
-  return <H1>hello world!</H1>
+  return (
+    <>
+      <Header />
+      <H1>hello world!</H1>
+    </>
+  )
 }
 
 export default Home
