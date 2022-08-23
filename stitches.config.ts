@@ -25,6 +25,7 @@ const config: ConfigType = {
       4: '1.25rem', // 20px
       5: '1.5rem', // 24px
       6: '2rem', // 32px
+      7: '3rem', // 46px
     },
     space: {
       1: '0.25rem', // 4px
