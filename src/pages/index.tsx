@@ -1,17 +1,26 @@
-import { Header } from '@components'
+import { Header, Title } from '@components'
 import type { NextPage } from 'next'
-import { styled } from '../../stitches.config'
-
-const H1 = styled('h1', {
-  fontWeight: '$normal',
-})
+import { Container, Content, Paragraph, Wrapper } from '../styles/home'
 
 const Home: NextPage = () => {
   return (
-    <>
+    <Container>
       <Header />
-      <H1>hello world!</H1>
-    </>
+
+      <Content>
+        <Wrapper>
+          <Title>
+            Hi, <br />
+            {`I'm Érik,`} <br />
+            Web Front-end.
+          </Title>
+          <Paragraph>
+            Web Front-end and sometimes I like to <br />
+            build some UI designs.
+          </Paragraph>
+        </Wrapper>
+      </Content>
+    </Container>
   )
 }
 
