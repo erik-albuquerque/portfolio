@@ -1,10 +1,15 @@
 import { Header, Title } from '@components'
 import type { NextPage } from 'next'
+import Head from 'next/head'
 import { Container, Content, Paragraph, Wrapper } from '../styles/home'
 
 const Home: NextPage = () => {
   return (
     <Container>
+      <Head>
+        <title>Home | Érik Albuquerque</title>
+      </Head>
+
       <Header />
 
       <Content>
