@@ -5,7 +5,7 @@ const Container = styled('div', {})
 const Text = styled('h1', {
   fontWeight: '$bold',
   fontSize: '$7',
-  color: '$white',
+  color: '$gray50',
 })
 
 export { Container, Text }
