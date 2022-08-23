@@ -150,6 +150,7 @@ const globalStyles = globalCss({
   },
   body: {
     fontFamily: '$inter',
+    bg: '$gray900',
   },
   button: {
     cursor: 'pointer',
