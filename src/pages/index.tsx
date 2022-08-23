@@ -1,7 +1,12 @@
 import type { NextPage } from 'next'
+import { styled } from '../../stitches.config'
+
+const H1 = styled('h1', {
+  fontWeight: '$normal',
+})
 
 const Home: NextPage = () => {
-  return <h1 style={{ fontFamily: 'Inter' }}>hello world!</h1>
+  return <H1>hello world!</H1>
 }
 
 export default Home
