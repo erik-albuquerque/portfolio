@@ -1,20 +1,20 @@
-import Link from 'next/link'
+import { ActiveLink } from '@components'
 import React from 'react'
-import { Container, Content } from './styles'
+import { Container, Content, Link } from './styles'
 
 const Header: React.FC = () => {
   return (
     <Container>
       <Content>
-        <Link href="/projects" passHref>
-          <a>Projects</a>
-        </Link>
-        <Link href="/about" passHref>
-          <a>About</a>
-        </Link>
-        <Link href="/tools" passHref>
-          <a>Tools</a>
-        </Link>
+        <ActiveLink href="/projects" passHref>
+          <Link>Projects</Link>
+        </ActiveLink>
+        <ActiveLink href="/about" passHref>
+          <Link>About</Link>
+        </ActiveLink>
+        <ActiveLink href="/tools" passHref>
+          <Link>Tools</Link>
+        </ActiveLink>
       </Content>
     </Container>
   )

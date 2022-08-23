@@ -11,14 +11,21 @@ const Content = styled('header', {
   justifyContent: 'center',
   gap: '$4',
   mt: '2rem',
-  a: {
-    color: '$gray400',
-    fontSize: '$3',
-    transition: 'color 0.2s',
+})
+
+const Link = styled('a', {
+  color: '$gray400',
+  fontSize: '$3',
+  transition: 'color 0.2s',
+  '&.active': {
+    color: '$white',
     '&:hover': {
-      color: '$white',
+      filter: 'brightness(0.95)',
     },
+  },
+  '&:hover': {
+    color: '$white',
   },
 })
 
-export { Container, Content }
+export { Container, Content, Link }
