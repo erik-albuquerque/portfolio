@@ -1,4 +1,5 @@
 export * from './ActiveLink'
 export * from './Article'
 export * from './Header'
+export * from './Repo'
 export * from './Title'

@@ -13,7 +13,6 @@ const config: ConfigType = {
       gray800: '#212024',
       gray900: '#151417',
       blue100: '#AEC5EB',
-      blue500: '#3178C6',
     },
     fonts: {
       inter: 'Inter, sans-serif',
