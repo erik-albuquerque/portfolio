@@ -158,6 +158,18 @@ const globalStyles = globalCss({
   body: {
     fontFamily: '$inter',
     bg: '$gray900',
+
+    '&::-webkit-scrollbar': {
+      width: '4px',
+    },
+    '&::-webkit-scrollbar-track': {
+      width: '6px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: '$gray700', // '#474747',
+      borderRadius: '24px',
+      height: '10px',
+    },
   },
   button: {
     cursor: 'pointer',
