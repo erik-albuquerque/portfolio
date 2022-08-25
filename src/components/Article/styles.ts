@@ -3,6 +3,9 @@ import { styled } from '../../../stitches.config'
 const Container = styled('article', {})
 
 const Content = styled('div', {
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '$3',
   ml: '$3',
 })
 
