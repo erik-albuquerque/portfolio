@@ -20,8 +20,9 @@
       "@types/*": ["src/types/*"],
       "@types": ["src/types"],
       "@utils/*": ["src/utils/*"],
-      "@utils": ["src/utils"]
-      //   "@lib/*": ["lib/*"],
+      "@utils": ["src/utils"],
+      "@lib/*": ["src/lib/*"],
+      "@lib": ["src/lib"]
       //   "@services/*": ["services/*"]
     },
     "incremental": true
