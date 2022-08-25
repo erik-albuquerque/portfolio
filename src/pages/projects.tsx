@@ -3,7 +3,13 @@ import { client, gql } from '@lib'
 import { RepoProps } from '@types'
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
-import { Container, Content, Link, Wrapper } from '../styles/projects'
+import {
+  Container,
+  Content,
+  Link,
+  Repositories,
+  Wrapper
+} from '../styles/projects'
 
 type ProjectsProps = {
   pinnedRepos: RepoProps[]
@@ -39,12 +45,15 @@ const Projects: NextPage<ProjectsProps> = ({
           </Article>
 
           <Article title="All projects">
-            {repositories.length > 0 &&
-              repositories.map((repo) => (
-                <Link key={repo.id} href={repo.url} target="_blank">
-                  {repo.name}
-                </Link>
-              ))}
+            {repositories.length > 0 && (
+              <Repositories>
+                {repositories.map((repo) => (
+                  <Link key={repo.id} href={repo.url} target="_blank">
+                    {repo.name}
+                  </Link>
+                ))}
+              </Repositories>
+            )}
           </Article>
         </Wrapper>
       </Content>

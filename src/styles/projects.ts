@@ -17,6 +17,11 @@ const Wrapper = styled('div', {
   gap: '$4',
 })
 
+const Repositories = styled(Wrapper, {
+  alignItems: 'flex-start',
+  gap: '$3',
+})
+
 const Link = styled('a', {
   color: '$white',
   fontSize: '$3',
@@ -28,4 +33,4 @@ const Link = styled('a', {
   },
 })
 
-export { Container, Content, Wrapper, Link }
+export { Container, Content, Wrapper, Link, Repositories }
