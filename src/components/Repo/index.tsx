@@ -1,6 +1,5 @@
 import { RepoProps } from '@types'
 import { formatDate } from '@utils'
-import { useEffect } from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import { TbGitFork } from 'react-icons/tb'
 import {
@@ -18,11 +17,7 @@ import {
   Updated
 } from './styles'
 
-const Repo: React.FC<RepoProps> = ({ data }: RepoProps) => {
-  useEffect(() => {
-    console.log(data)
-  }, [data])
-
+const Repo: React.FC<RepoProps> = (data: RepoProps) => {
   const shortLicense =
     data.licenseInfo && data.licenseInfo.name.split(' ').slice(0, 1)
 
