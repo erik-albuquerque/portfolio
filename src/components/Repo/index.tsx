@@ -80,7 +80,7 @@ const Repo: React.FC<RepoProps> = (data: RepoProps) => {
                 <span>{language.name}</span>
               </Language>
             ))}
-          {data.licenseInfo && (
+          {shortLicense && (
             <License>
               <svg
                 aria-hidden="true"

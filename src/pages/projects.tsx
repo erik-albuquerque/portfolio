@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Article, Masonry, Repo, Title } from '@components'
 import { Layout } from '@components/Layout'
 import { client, gql } from '@lib'
@@ -138,13 +139,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
       forkCount: node.forkCount,
       stargazerCount: node.stargazerCount,
       updatedAt: node.updatedAt,
-      licenseInfo: {
-        name: node.licenseInfo.name,
-      },
-      parent: {
-        nameWithOwner: node.nameWithOwner ? node.nameWithOwner : null,
-        url: node.url,
-      },
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+      licenseInfo: node.licenseInfo!,
+      parent: node.parent,
       languages: node.languages.edges.map(({ node }: any) => {
         return {
           id: node.id,
