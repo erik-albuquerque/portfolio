@@ -1,8 +1,10 @@
-import { Article, Header, Masonry, Repo, Title } from '@components'
+import { Article, Masonry, Repo, Title } from '@components'
+import { Layout } from '@components/Layout'
 import { client, gql } from '@lib'
 import { RepoProps } from '@types'
-import { GetServerSideProps, NextPage } from 'next'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
+import { ReactElement } from 'react'
 import {
   Container,
   Content,
@@ -10,13 +12,14 @@ import {
   Repositories,
   Wrapper
 } from '../styles/projects'
+import { NextPageWithLayout } from './_app'
 
 type ProjectsProps = {
   pinnedRepos: RepoProps[]
   repos: RepoProps[]
 }
 
-const Projects: NextPage<ProjectsProps> = ({
+const Projects: NextPageWithLayout<ProjectsProps> = ({
   pinnedRepos,
   repos,
 }: ProjectsProps) => {
@@ -28,8 +31,6 @@ const Projects: NextPage<ProjectsProps> = ({
       <Head>
         <title>Projects | Érik Albuquerque</title>
       </Head>
-
-      <Header />
 
       <Content>
         <Wrapper>
@@ -61,7 +62,9 @@ const Projects: NextPage<ProjectsProps> = ({
   )
 }
 
-export default Projects
+Projects.getLayout = function getLayout(page: ReactElement) {
+  return <Layout>{page}</Layout>
+}
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const { data } = await client.query({
@@ -167,3 +170,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   }
 }
+
+export default Projects
