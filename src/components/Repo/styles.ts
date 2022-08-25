@@ -25,9 +25,12 @@ const Header = styled('header', {
   justifyContent: 'space-between',
 
   strong: {
-    color: 'inherit',
+    color: '$white',
     fontWeight: '$medium',
     fontSize: '$3',
+    '&:hover': {
+      color: 'inherit',
+    },
   },
 })
 const Forked = styled('div', {
