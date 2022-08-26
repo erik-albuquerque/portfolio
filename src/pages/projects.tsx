@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Article, Masonry, Repo, Title } from '@components'
-import { Layout } from '@components/Layout'
+import { Article, Layout, Masonry, Repo, Title } from '@components'
 import { client, gql } from '@lib'
 import { RepoProps } from '@types'
 import { GetServerSideProps } from 'next'
