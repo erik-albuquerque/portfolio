@@ -21,7 +21,7 @@ const Home: NextPage = () => {
           </Title>
           <Paragraph>
             Web Front-end and sometimes I like to <br />
-            build some UI designs.
+            do some Pixel Art.
           </Paragraph>
         </Wrapper>
       </Content>
