@@ -1,9 +1,10 @@
 import { Article, Layout, Socials, Title } from '@components'
 import Head from 'next/head'
-import { ReactElement, ReactNode } from 'react'
+import { Fragment, ReactElement, ReactNode } from 'react'
 import {
   AboutSite,
-  Avatar, Career,
+  Avatar,
+  Career,
   Certificate,
   Container,
   Content,
@@ -253,23 +254,19 @@ const About: NextPageWithLayout = () => {
             <AboutSite>
               {utils.length > 0 &&
                 utils.map((info) => (
-                  <>
-                    <Paragraph>
-                      {info.title}: <Link href={info.url}>{info.name}</Link>.
-                    </Paragraph>
-                  </>
+                  <Paragraph key={info.name}>
+                    {info.title}: <Link href={info.url}>{info.name}</Link>.
+                  </Paragraph>
                 ))}
 
               {techs.length > 0 && (
                 <Paragraph lineHeight="sm">
                   Technologies:{' '}
                   {techs.map((tech, techId) => (
-                    <>
-                      <Link key={techId} href={tech.url}>
-                        {tech.name}
-                      </Link>
+                    <Fragment key={techId}>
+                      <Link href={tech.url}>{tech.name}</Link>
                       {suffix(techId)}
-                    </>
+                    </Fragment>
                   ))}
                 </Paragraph>
               )}
