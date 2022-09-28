@@ -1,7 +1,5 @@
 import { AppCard, Article, Layout, SetupComponent, Title } from '@components'
 import { appsAndServices, setup } from '@constants'
-import Head from 'next/head'
-import { ReactElement } from 'react'
 import {
   Apps,
   Container,
@@ -10,7 +8,9 @@ import {
   Section,
   Setup,
   Wrapper
-} from '../styles/tools'
+} from '@styles/tools'
+import Head from 'next/head'
+import { ReactElement } from 'react'
 import { NextPageWithLayout } from './_app'
 
 const Tools: NextPageWithLayout = () => {

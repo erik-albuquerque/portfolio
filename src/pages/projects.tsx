@@ -1,17 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Article, Layout, Masonry, Repo, Title } from '@components'
 import { client, gql } from '@lib'
-import { RepoProps } from '@types'
-import { GetServerSideProps } from 'next'
-import Head from 'next/head'
-import { ReactElement } from 'react'
 import {
   Container,
   Content,
   Link,
   Repositories,
   Wrapper
-} from '../styles/projects'
+} from '@styles/projects'
+import { RepoProps } from '@types'
+import { GetServerSideProps } from 'next'
+import Head from 'next/head'
+import { ReactElement } from 'react'
 import { NextPageWithLayout } from './_app'
 
 type ProjectsProps = {

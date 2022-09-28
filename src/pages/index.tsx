@@ -1,7 +1,7 @@
 import { Header, Title } from '@components'
+import { Container, Content, Paragraph, Wrapper } from '@styles/home'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { Container, Content, Paragraph, Wrapper } from '../styles/home'
 
 const Home: NextPage = () => {
   return (

@@ -25,6 +25,8 @@
       "@lib": ["src/lib"],
       "@constants/*": ["src/constants/*"],
       "@constants": ["src/constants"],
+      "@styles/*": ["src/styles/*"],
+      "@styles": ["src/styles"],
       //   "@services/*": ["services/*"]
     },
     "incremental": true

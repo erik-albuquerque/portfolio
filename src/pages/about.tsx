@@ -1,7 +1,12 @@
 import { Article, Layout, Socials, Title } from '@components'
-import { career, certifications, portfolio, skills, socials, techs } from '@constants'
-import Head from 'next/head'
-import { Fragment, ReactElement, ReactNode } from 'react'
+import {
+  career,
+  certifications,
+  portfolio,
+  skills,
+  socials,
+  techs
+} from '@constants'
 import {
   AboutSite,
   Avatar,
@@ -15,7 +20,9 @@ import {
   Skill,
   Skills,
   Wrapper
-} from '../styles/about'
+} from '@styles/about'
+import Head from 'next/head'
+import { Fragment, ReactElement, ReactNode } from 'react'
 import { NextPageWithLayout } from './_app'
 
 const Link = ({ children, href }: { children: ReactNode; href: string }) => (
@@ -25,7 +32,6 @@ const Link = ({ children, href }: { children: ReactNode; href: string }) => (
 )
 
 const About: NextPageWithLayout = () => {
-    
   const suffix = (techId: number) =>
     techs[techs.length - 1] === techs[techId]
       ? '.'
