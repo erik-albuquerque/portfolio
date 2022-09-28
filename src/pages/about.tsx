@@ -1,4 +1,5 @@
 import { Article, Layout, Socials, Title } from '@components'
+import { career, certifications, portfolio, skills, socials, techs } from '@constants'
 import Head from 'next/head'
 import { Fragment, ReactElement, ReactNode } from 'react'
 import {
@@ -24,148 +25,7 @@ const Link = ({ children, href }: { children: ReactNode; href: string }) => (
 )
 
 const About: NextPageWithLayout = () => {
-  const skills = [
-    {
-      name: 'typescript',
-      url: 'https://www.typescriptlang.org/',
-    },
-    {
-      name: 'javascript',
-      url: 'https://www.javascript.com/',
-    },
-    {
-      name: 'reactjs',
-      url: 'https://reactjs.org/',
-    },
-    {
-      name: 'nextjs',
-      url: 'https://nextjs.org/',
-    },
-    {
-      name: 'css',
-      url: 'https://www.w3schools.com/css/',
-    },
-    {
-      name: 'html',
-      url: 'https://www.w3schools.com/html/',
-    },
-  ]
-
-  const career = [
-    {
-      name: 'Scientific Initiation Fellow',
-      company: {
-        name: 'IFCE',
-        url: 'https://ifce.edu.br/',
-      },
-      address: {
-        city: 'Paracuru',
-        state: 'CE',
-      },
-      period: 'Feb 2019 - May 2019 - 4 months',
-    },
-  ]
-
-  const utils = [
-    {
-      title: 'Designed',
-      name: 'Figma',
-      url: 'https://www.figma.com/',
-    },
-    {
-      title: 'IDE',
-      name: 'Visual Studio Code',
-      url: 'https://code.visualstudio.com/',
-    },
-    {
-      title: 'Hosted by',
-      name: 'Vercel',
-      url: 'https://vercel.com/',
-    },
-    {
-      title: 'Font',
-      name: 'Inter',
-      url: 'https://fonts.google.com/specimen/Inter?query=Inter',
-    },
-  ]
-
-  const techs = [
-    {
-      name: 'Github API',
-      url: 'https://docs.github.com/en/graphql',
-    },
-    {
-      name: 'Graphql',
-      url: 'https://graphql.org/',
-    },
-    {
-      name: 'Apollo Client',
-      url: 'https://www.apollographql.com/docs/react/',
-    },
-    {
-      name: 'React.js',
-      url: 'https://reactjs.org/',
-    },
-    {
-      name: 'Next.js',
-      url: 'https://nextjs.org/',
-    },
-    {
-      name: 'TypeScript',
-      url: 'https://www.typescriptlang.org/',
-    },
-    {
-      name: 'Stitches',
-      url: 'https://stitches.dev/',
-    },
-  ]
-
-  const socials = [
-    {
-      name: 'Linkedin',
-      url: 'https://www.linkedin.com/in/erik-albuquerque/',
-    },
-    {
-      name: 'Github',
-      url: 'https://github.com/erik-albuquerque',
-    },
-    {
-      name: 'Twitter',
-      url: 'https://twitter.com/albuquerik',
-    },
-    {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/albuquerik',
-    },
-  ]
-
-  const certifications = [
-    {
-      name: 'Ignite Trilha React.Js',
-      company: {
-        name: 'Rocketseat',
-        url: 'https://www.rocketseat.com.br/',
-      },
-      credential: {
-        credentialId: '358a8f0b-ffe5-4f6b-af5f-97bf1e288870',
-        url: 'https://drive.google.com/file/d/1luA5ZzfR2sLKsu5LlKbDwA1b7dOLwp-G/view',
-      },
-      period: 'Issued in Jul 2022 - No expiration date',
-    },
-    {
-      name: 'Introduction to Programming Using JavaScript',
-      company: {
-        name: 'Sololearn',
-        url: 'https://www.sololearn.com/home',
-      },
-      credential: {
-        credentialId: '',
-        url: 'https://www.sololearn.com/Certificate/CT-PETE4I8F/jpg',
-      },
-      period: 'Issued Nov 2019 · No Expiration Date',
-    },
-  ]
-
+    
   const suffix = (techId: number) =>
     techs[techs.length - 1] === techs[techId]
       ? '.'
@@ -252,8 +112,8 @@ const About: NextPageWithLayout = () => {
 
           <Article title="About this site">
             <AboutSite>
-              {utils.length > 0 &&
-                utils.map((info) => (
+              {portfolio.length > 0 &&
+                portfolio.map((info) => (
                   <Paragraph key={info.name}>
                     {info.title}: <Link href={info.url}>{info.name}</Link>.
                   </Paragraph>

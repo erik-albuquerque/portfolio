@@ -22,7 +22,9 @@
       "@utils/*": ["src/utils/*"],
       "@utils": ["src/utils"],
       "@lib/*": ["src/lib/*"],
-      "@lib": ["src/lib"]
+      "@lib": ["src/lib"],
+      "@constants/*": ["src/constants/*"],
+      "@constants": ["src/constants"],
       //   "@services/*": ["services/*"]
     },
     "incremental": true
