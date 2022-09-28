@@ -1,4 +1,4 @@
-import { styled } from '../../../stitches.config'
+import { styled } from 'stitches.config'
 
 const Container = styled('footer', {
   maxW: '720px',

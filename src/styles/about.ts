@@ -1,5 +1,5 @@
 import { darken } from 'polished'
-import { styled } from '../../stitches.config'
+import { styled } from 'stitches.config'
 
 const Container = styled('div', {
   maxW: '820px',
