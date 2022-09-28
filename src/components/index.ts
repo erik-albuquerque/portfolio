@@ -7,6 +7,7 @@ export * from './Icon'
 export * from './Layout'
 export * from './Mansory'
 export * from './Repo'
+export * from './SetupComponent'
 export * from './Socials'
 export * from './Title'
 
