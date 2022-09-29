@@ -2,7 +2,12 @@ import { styled } from 'stitches.config'
 
 const Container = styled('div', {
   maxW: '1120px',
-  mx: 'auto',
+  '@sm': {
+    mx: '$4',
+  },
+  '@md': {
+    mx: 'auto',
+  },
 })
 
 const Content = styled('div', {
@@ -15,7 +20,12 @@ const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: '$3',
+  '@sm': {
+    gap: '$2',
+  },
+  '@lg': {
+    gap: '$3',
+  },
 })
 
 export { Container, Content, Wrapper }

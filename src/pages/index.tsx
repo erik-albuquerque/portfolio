@@ -19,9 +19,9 @@ const Home: NextPage = () => {
             {`I'm Érik,`} <br />
             Web Front-end.
           </Title>
-          <Paragraph lineHeight='sm'>
-            Web Front-end and sometimes I like to <br />
-            do some Pixel Art.
+          <Paragraph lineHeight="sm">
+            Web Front-end and sometimes I like to do some <br />
+            Pixel Art.
           </Paragraph>
         </Wrapper>
       </Content>

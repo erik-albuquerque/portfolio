@@ -6,7 +6,7 @@ const Content = styled('div', {})
 
 const P = styled('p', {
   color: '$gray400',
- 
+
   b: {
     color: '$white',
   },
@@ -26,9 +26,18 @@ const P = styled('p', {
     fontSize: {
       sm: {
         fontSize: '$2',
+        '@sm': {
+          fontSize: '$1',
+        },
       },
       md: {
         fontSize: '$3',
+        '@sm': {
+          fontSize: '$2',
+        },
+        '@md': {
+          fontSize: '$3',
+        },
       },
       lg: {
         fontSize: '$4',
@@ -68,6 +77,5 @@ const P = styled('p', {
     isChildrenBold: 'true',
   },
 })
-
 
 export { Container, Content, P }
