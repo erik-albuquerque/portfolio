@@ -1,7 +1,7 @@
-import { Paragraph } from '@components'
+import { Link, Paragraph } from '@components'
 import { appsImagesSrc } from '@constants'
 import Image from 'next/image'
-import { Container, Content, Link, Wrapper } from './styles'
+import { Container, Content, Wrapper } from './styles'
 
 type Props = {
   data: {
@@ -27,8 +27,17 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
           alt={name}
         />
         <Wrapper>
-          <Link href={url}>{name}</Link>
-          <Paragraph fontSize='sm'>{description}</Paragraph>
+          <Link
+            href={url}
+            isTargetBlank
+            {...{
+              color: 'gray50',
+              textDecoration: 'none',
+            }}
+          >
+            {name}
+          </Link>
+          <Paragraph fontSize="sm">{description}</Paragraph>
         </Wrapper>
       </Content>
     </Container>

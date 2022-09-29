@@ -12,26 +12,4 @@ const Content = styled('div', {
   },
 })
 
-const Link = styled('a', {
-  color: '$gray400',
-  fontSize: '$2',
-  alignSelf: 'flex-start',
-  transition: 'color 0.2s',
-  variants: {
-    isUrl: {
-      true: {
-        textDecoration: 'underline',
-        cursor: 'pointer',
-        '&:hover': {
-          color: '$gray300',
-        },
-      },
-      false: {
-        textDecoration: 'none',
-        cursor: 'default',
-      },
-    },
-  },
-})
-
-export { Container, Content, Link }
+export { Container, Content }

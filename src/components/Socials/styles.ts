@@ -12,13 +12,4 @@ const Content = styled('main', {
   gap: '$3',
 })
 
-const Link = styled('a', {
-  svg: {
-    transition: 'fill 0.2s',
-    '&:hover': {
-      fill: '$white',
-    },
-  },
-})
-
-export { Container, Content, Link }
+export { Container, Content }

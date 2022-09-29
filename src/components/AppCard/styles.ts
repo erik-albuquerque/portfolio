@@ -1,4 +1,3 @@
-import { darken } from 'polished'
 import { styled } from 'stitches.config'
 
 const Container = styled('div', {
@@ -28,15 +27,4 @@ const Wrapper = styled('div', {
 })
 
 
-const Link = styled('a', {
-  color: '$gray50',
-  fontWeight: '$medium',
-  fontSize: '$3',
-  transition: 'color 0.2s',
-  '&:hover': {
-    textDecoration: 'underline',
-    color: darken(0.1, '#AEC5EB'),
-  },
-})
-
-export { Container, Content, Link, Wrapper }
+export { Container, Content, Wrapper }

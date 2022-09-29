@@ -1,3 +1,4 @@
+import { Link } from '@components'
 import { RepoProps } from '@types'
 import { formatDate } from '@utils'
 import { AiOutlineStar } from 'react-icons/ai'
@@ -12,7 +13,6 @@ import {
   Header,
   Language,
   License,
-  Link,
   StargazerCount,
   Updated
 } from './styles'
@@ -27,7 +27,13 @@ const Repo: React.FC<RepoProps> = (data: RepoProps) => {
     <Container>
       <Content>
         <Header>
-          <Link href={data.url} target="_blank">
+          <Link
+            href={data.url}
+            isTargetBlank
+            {...{
+              color: 'gray50',
+            }}
+          >
             <strong>{data.name}</strong>
           </Link>
           <svg
@@ -48,7 +54,14 @@ const Repo: React.FC<RepoProps> = (data: RepoProps) => {
           <Forked>
             <span>Forked from</span>
             {data.parent && (
-              <Link href={data.parent.url} target="_blank">
+              <Link
+                href={data.parent.url}
+                isTargetBlank
+                {...{
+                  color: 'blue100',
+                  fontSize: 'xs',
+                }}
+              >
                 {data.parent.nameWithOwner}
               </Link>
             )}

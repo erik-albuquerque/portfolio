@@ -65,16 +65,6 @@ const Skill = styled('strong', {
   },
 })
 
-const Link = styled('a', {
-  color: '$white',
-  textDecoration: 'underline',
-  alignSelf: 'flex-start',
-  transition: 'color 0.2s',
-  '&:hover': {
-    color: '$gray400',
-  },
-})
-
 const Avatar = styled('img', {
   br: '$3',
   variants: {
@@ -96,7 +86,6 @@ export {
   Container,
   Content,
   Wrapper,
-  Link,
   Section,
   Career,
   Certificate,

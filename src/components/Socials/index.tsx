@@ -1,5 +1,5 @@
-import { Icon } from '@components'
-import { Container, Content, Link } from './styles'
+import { Icon, Link } from '@components'
+import { Container, Content } from './styles'
 
 type Social = {
   name: string
@@ -16,7 +16,7 @@ const Socials: React.FC<SocialsProps> = ({ data }: SocialsProps) => {
       <Content>
         {data.length > 0 &&
           data.map((social) => (
-            <Link key={social.name} href={social.url} target="_blank">
+            <Link key={social.name} href={social.url} isTargetBlank>
               <Icon name={social.name} />
             </Link>
           ))}

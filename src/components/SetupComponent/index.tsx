@@ -1,5 +1,5 @@
-import { ReactNode } from 'react'
-import { Container, Content, Link as StitchesLink } from './styles'
+import { Link } from '@components'
+import { Container, Content } from './styles'
 
 type Props = {
   data: {
@@ -9,12 +9,6 @@ type Props = {
   }
 }
 
-const Link = ({ children, href }: { children: ReactNode; href: string }) => (
-  <StitchesLink isUrl={!!href} href={href} target="_blank">
-    {children}
-  </StitchesLink>
-)
-
 const SetupComponent: React.FC<Props> = ({ data }) => {
   const { title, description, url } = data
 
@@ -22,7 +16,20 @@ const SetupComponent: React.FC<Props> = ({ data }) => {
     <Container>
       <Content>
         <strong>{title}</strong>
-        <Link href={url}>{description}</Link>
+        <Link
+          href={url}
+          isTargetBlank
+          hasURL={!!url}
+          {...{
+            color: 'gray400',
+            fontSize: 'sm',
+            css: {
+              alignSelf: 'flex-start',
+            },
+          }}
+        >
+          {description}
+        </Link>
       </Content>
     </Container>
   )

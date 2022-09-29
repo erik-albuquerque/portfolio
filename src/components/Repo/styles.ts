@@ -1,4 +1,3 @@
-import { darken } from 'polished'
 import { styled } from 'stitches.config'
 
 const Container = styled('div', {})
@@ -51,17 +50,6 @@ const Description = styled('p', {
   pr: '$3',
 })
 
-const Link = styled('a', {
-  fontSize: '$1',
-  color: '$blue100',
-  fontWeight: '$regular',
-  transition: 'color 0.2s',
-  '&:hover': {
-    textDecoration: 'underline',
-    color: darken(0.1, '#AEC5EB'),
-  },
-})
-
 const Language = styled('div', {
   display: 'flex',
   flexDirection: 'row',
@@ -97,7 +85,6 @@ export {
   Forked,
   Description,
   Footer,
-  Link,
   Language,
   License,
   ForkCount,

@@ -22,15 +22,4 @@ const Repositories = styled(Wrapper, {
   gap: '$3',
 })
 
-const Link = styled('a', {
-  color: '$white',
-  fontSize: '$3',
-  fontWeight: '$medium',
-  textDecoration: 'underline',
-  transition: 'color 0.2s',
-  '&:hover': {
-    color: '$gray400',
-  },
-})
-
-export { Container, Content, Wrapper, Link, Repositories }
+export { Container, Content, Wrapper, Repositories }

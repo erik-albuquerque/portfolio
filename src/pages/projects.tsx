@@ -1,13 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Article, Layout, Masonry, Repo, Title } from '@components'
+import { Article, Layout, Link, Masonry, Repo, Title } from '@components'
 import { client, gql } from '@lib'
-import {
-  Container,
-  Content,
-  Link,
-  Repositories,
-  Wrapper
-} from '@styles/projects'
+import { Container, Content, Repositories, Wrapper } from '@styles/projects'
 import { RepoProps } from '@types'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
@@ -49,7 +43,15 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
             {repositories.length > 0 && (
               <Repositories>
                 {repositories.map((repo) => (
-                  <Link key={repo.id} href={repo.url} target="_blank">
+                  <Link
+                    key={repo.id}
+                    href={repo.url}
+                    isTargetBlank
+                    {...{
+                      color: 'white',
+                      textDecoration: 'underline',
+                    }}
+                  >
                     {repo.name}
                   </Link>
                 ))}

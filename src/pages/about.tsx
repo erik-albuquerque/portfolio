@@ -1,4 +1,4 @@
-import { Article, Layout, Paragraph, Socials, Title } from '@components'
+import { Article, Layout, Link, Paragraph, Socials, Title } from '@components'
 import {
   career,
   certifications,
@@ -14,21 +14,14 @@ import {
   Certificate,
   Container,
   Content,
-  Link as StitchesLink,
   Section,
   Skill,
   Skills,
   Wrapper
 } from '@styles/about'
 import Head from 'next/head'
-import { Fragment, ReactElement, ReactNode } from 'react'
+import { Fragment, ReactElement } from 'react'
 import { NextPageWithLayout } from './_app'
-
-const Link = ({ children, href }: { children: ReactNode; href: string }) => (
-  <StitchesLink href={href} target="_blank">
-    {children}
-  </StitchesLink>
-)
 
 const About: NextPageWithLayout = () => {
   const suffix = (techId: number) =>
@@ -57,7 +50,17 @@ const About: NextPageWithLayout = () => {
             <Paragraph lineHeight="md">
               {`I'm`} a <b>Front-End Developer</b>, based in <b>Brazil</b>. In
               2023 <br />I will start my degree in software engineering at{' '}
-              <Link href="https://estacio.br/">Estácio</Link>
+              <Link
+                href="https://estacio.br/"
+                isTargetBlank
+                {...{
+                  color: 'white',
+                  fontWeight: 'regular',
+                  textDecoration: 'underline',
+                }}
+              >
+                Estácio
+              </Link>
               . <br />
               Sometimes I like to do some <b>Pixel Art</b>.
             </Paragraph>
@@ -72,8 +75,18 @@ const About: NextPageWithLayout = () => {
                   <strong>{job.name}</strong>
 
                   <Paragraph>
-                    <Link href={job.company.url}>{job.company.name}</Link> •{' '}
-                    {job.address.city}, {job.address.state}
+                    <Link
+                      href={job.company.url}
+                      isTargetBlank
+                      {...{
+                        color: 'white',
+                        fontWeight: 'regular',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      {job.company.name}
+                    </Link>{' '}
+                    • {job.address.city}, {job.address.state}
                   </Paragraph>
 
                   <Paragraph>{job.period}</Paragraph>
@@ -87,7 +100,15 @@ const About: NextPageWithLayout = () => {
                 <Certificate key={certificate.name}>
                   <strong>{certificate.name}</strong>
 
-                  <Link href={certificate.company.url}>
+                  <Link
+                    href={certificate.company.url}
+                    isTargetBlank
+                    {...{
+                      color: 'white',
+                      fontWeight: 'regular',
+                      textDecoration: 'underline',
+                    }}
+                  >
                     {certificate.company.name}
                   </Link>
 
@@ -99,7 +120,17 @@ const About: NextPageWithLayout = () => {
 
                   <Paragraph>{certificate.period}</Paragraph>
 
-                  <Link href={certificate.credential.url}>Show credential</Link>
+                  <Link
+                    href={certificate.credential.url}
+                    isTargetBlank
+                    {...{
+                      color: 'white',
+                      fontWeight: 'regular',
+                      textDecoration: 'underline',
+                    }}
+                  >
+                    Show credential
+                  </Link>
                 </Certificate>
               ))}
           </Article>
@@ -108,7 +139,14 @@ const About: NextPageWithLayout = () => {
             <Skills>
               {skills.length > 0 &&
                 skills.map((skill) => (
-                  <Link key={skill.name} href={skill.url}>
+                  <Link
+                    key={skill.name}
+                    href={skill.url}
+                    isTargetBlank
+                    {...{
+                      textDecoration: 'underline',
+                    }}
+                  >
                     <Skill>#{skill.name}</Skill>
                   </Link>
                 ))}
@@ -120,7 +158,19 @@ const About: NextPageWithLayout = () => {
               {portfolio.length > 0 &&
                 portfolio.map((info) => (
                   <Paragraph key={info.name}>
-                    {info.title}: <Link href={info.url}>{info.name}</Link>.
+                    {info.title}:{' '}
+                    <Link
+                      href={info.url}
+                      isTargetBlank
+                      {...{
+                        color: 'white',
+                        fontWeight: 'regular',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      {info.name}
+                    </Link>
+                    .
                   </Paragraph>
                 ))}
 
@@ -129,7 +179,17 @@ const About: NextPageWithLayout = () => {
                   Technologies:{' '}
                   {techs.map((tech, techId) => (
                     <Fragment key={techId}>
-                      <Link href={tech.url}>{tech.name}</Link>
+                      <Link
+                        href={tech.url}
+                        isTargetBlank
+                        {...{
+                          color: 'white',
+                          fontWeight: 'regular',
+                          textDecoration: 'underline',
+                        }}
+                      >
+                        {tech.name}
+                      </Link>
                       {suffix(techId)}
                     </Fragment>
                   ))}
@@ -140,7 +200,15 @@ const About: NextPageWithLayout = () => {
                 Made with <b>{'<3'}</b> by me.{' '}
               </Paragraph>
 
-              <Link href="https://github.com/erik-albuquerque/portfolio">
+              <Link
+                href="https://github.com/erik-albuquerque/portfolio"
+                isTargetBlank
+                {...{
+                  color: 'white',
+                  fontWeight: 'regular',
+                  textDecoration: 'underline',
+                }}
+              >
                 learn more
               </Link>
             </AboutSite>

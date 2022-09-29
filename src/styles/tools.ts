@@ -38,14 +38,4 @@ const Setup = styled('div', {
   mt: '$3'
 })
 
-const Link = styled('a', {
-  color: '$white',
-  textDecoration: 'underline',
-  alignSelf: 'flex-start',
-  transition: 'color 0.2s',
-  '&:hover': {
-    color: '$gray400',
-  },
-})
-
-export { Container, Content, Wrapper, Section, Link, Apps, Setup }
+export { Container, Content, Wrapper, Section, Apps, Setup }

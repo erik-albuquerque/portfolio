@@ -1,19 +1,55 @@
-import { ActiveLink } from '@components'
+import { ActiveLink, Link } from '@components'
 import React from 'react'
-import { Container, Content, Link } from './styles'
+import { Container, Content } from './styles'
 
 const Header: React.FC = () => {
   return (
     <Container>
       <Content>
         <ActiveLink href="/projects" passHref>
-          <Link>Projects</Link>
+          <Link
+            {...{
+              fontWeight: 'regular',
+              css: {
+                '&:hover': {
+                  color: '$white',
+                  textDecoration: 'none',
+                },
+              },
+            }}
+          >
+            Projects
+          </Link>
         </ActiveLink>
         <ActiveLink href="/about" passHref>
-          <Link>About</Link>
+          <Link
+            {...{
+              fontWeight: 'regular',
+              css: {
+                '&:hover': {
+                  color: '$white',
+                  textDecoration: 'none',
+                },
+              },
+            }}
+          >
+            About
+          </Link>
         </ActiveLink>
         <ActiveLink href="/tools" passHref>
-          <Link>Tools</Link>
+          <Link
+            {...{
+              fontWeight: 'regular',
+              css: {
+                '&:hover': {
+                  color: '$white',
+                  textDecoration: 'none',
+                },
+              },
+            }}
+          >
+            Tools
+          </Link>
         </ActiveLink>
       </Content>
     </Container>
