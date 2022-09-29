@@ -1,10 +1,16 @@
-import { AppCard, Article, Layout, SetupComponent, Title } from '@components'
+import {
+  AppCard,
+  Article,
+  Layout,
+  Paragraph,
+  SetupComponent,
+  Title
+} from '@components'
 import { appsAndServices, setup } from '@constants'
 import {
   Apps,
   Container,
   Content,
-  Paragraph,
   Section,
   Setup,
   Wrapper
@@ -24,7 +30,7 @@ const Tools: NextPageWithLayout = () => {
           <Title>Tools.</Title>
 
           <Section>
-            <Paragraph>
+            <Paragraph isChildrenBold={false}>
               The <b>products</b>, <b>apps</b> and <b>services</b> I use on
               daily basis and life.
             </Paragraph>

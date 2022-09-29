@@ -18,10 +18,4 @@ const Wrapper = styled('div', {
   gap: '$3',
 })
 
-const Paragraph = styled('span', {
-  color: '$gray400',
-  fontSize: '$3',
-  lineHeight: '$3',
-})
-
-export { Container, Content, Wrapper, Paragraph }
+export { Container, Content, Wrapper }

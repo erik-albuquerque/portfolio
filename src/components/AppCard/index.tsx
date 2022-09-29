@@ -1,6 +1,7 @@
+import { Paragraph } from '@components'
 import { appsImagesSrc } from '@constants'
 import Image from 'next/image'
-import { Container, Content, Link, Paragraph, Wrapper } from './styles'
+import { Container, Content, Link, Wrapper } from './styles'
 
 type Props = {
   data: {
@@ -27,7 +28,7 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
         />
         <Wrapper>
           <Link href={url}>{name}</Link>
-          <Paragraph>{description}</Paragraph>
+          <Paragraph fontSize='sm'>{description}</Paragraph>
         </Wrapper>
       </Content>
     </Container>

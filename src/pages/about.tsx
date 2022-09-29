@@ -1,4 +1,4 @@
-import { Article, Layout, Socials, Title } from '@components'
+import { Article, Layout, Paragraph, Socials, Title } from '@components'
 import {
   career,
   certifications,
@@ -15,7 +15,6 @@ import {
   Container,
   Content,
   Link as StitchesLink,
-  Paragraph,
   Section,
   Skill,
   Skills,

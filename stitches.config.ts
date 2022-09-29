@@ -57,7 +57,7 @@ const config: ConfigType = {
       round: '100%',
     },
     fontWeights: {
-      normal: 400,
+      regular: 400,
       medium: 500,
       bold: 700,
     },

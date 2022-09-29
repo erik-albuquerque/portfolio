@@ -38,34 +38,6 @@ const Setup = styled('div', {
   mt: '$3'
 })
 
-const Paragraph = styled('p', {
-  color: '$gray400',
-  fontSize: '$3',
-  fontWeight: '$regular',
-
-  b: {
-    fontWeight: '$regular',
-    color: '$white',
-  },
-
-  variants: {
-    lineHeight: {
-      xs: {
-        lineHeight: '$2',
-      },
-      sm: {
-        lineHeight: '$3',
-      },
-      md: {
-        lineHeight: '$4',
-      },
-      lg: {
-        lineHeight: '$5',
-      },
-    },
-  },
-})
-
 const Link = styled('a', {
   color: '$white',
   textDecoration: 'underline',
@@ -76,4 +48,4 @@ const Link = styled('a', {
   },
 })
 
-export { Container, Content, Wrapper, Section, Paragraph, Link, Apps, Setup }
+export { Container, Content, Wrapper, Section, Link, Apps, Setup }

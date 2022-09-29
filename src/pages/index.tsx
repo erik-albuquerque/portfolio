@@ -1,5 +1,5 @@
-import { Header, Title } from '@components'
-import { Container, Content, Paragraph, Wrapper } from '@styles/home'
+import { Header, Paragraph, Title } from '@components'
+import { Container, Content, Wrapper } from '@styles/home'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
             {`I'm Érik,`} <br />
             Web Front-end.
           </Title>
-          <Paragraph>
+          <Paragraph lineHeight='sm'>
             Web Front-end and sometimes I like to <br />
             do some Pixel Art.
           </Paragraph>

@@ -27,32 +27,6 @@ const Wrapper = styled('div', {
   gap: '$1',
 })
 
-const Paragraph = styled('p', {
-  color: '$gray400',
-  fontSize: '$2',
-  fontWeight: '$regular',
-
-  b: {
-    color: '$white',
-  },
-
-  variants: {
-    lineHeight: {
-      xs: {
-        lineHeight: '$2',
-      },
-      sm: {
-        lineHeight: '$3',
-      },
-      md: {
-        lineHeight: '$4',
-      },
-      lg: {
-        lineHeight: '$5',
-      },
-    },
-  },
-})
 
 const Link = styled('a', {
   color: '$gray50',
@@ -65,4 +39,4 @@ const Link = styled('a', {
   },
 })
 
-export { Container, Content, Link, Paragraph, Wrapper }
+export { Container, Content, Link, Wrapper }
