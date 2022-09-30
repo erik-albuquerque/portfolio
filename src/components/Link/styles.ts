@@ -35,7 +35,12 @@ const Anchor = styled('a', {
     },
     fontSize: {
       xs: {
-        fontSize: '$1',
+        '@sm': {
+          fontSize: '$2',
+        },
+        '@md': {
+          fontSize: '$1',
+        },
       },
       sm: {
         fontSize: '$2',

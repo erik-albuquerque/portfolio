@@ -3,10 +3,16 @@ import { styled } from 'stitches.config'
 const Container = styled('article', {})
 
 const Content = styled('div', {
+  w:'100%',
   display: 'flex',
   flexDirection: 'column',
   gap: '$3',
-  ml: '$3',
+  '@sm': {
+    ml: 0,
+  },
+  '@md': {
+    ml: '$3',
+  },
 })
 
 const Wrapper = styled('div', {
@@ -19,7 +25,14 @@ const Wrapper = styled('div', {
 const Header = styled('header', {
   h1: {
     color: '$gray50',
-    fontSize: '$4',
+    '@sm': {
+      fontSize: '$4',
+      ml: '$3',
+    },
+    '@md': {
+      fontSize: '$4',
+      ml: 0,
+    },
   },
 })
 

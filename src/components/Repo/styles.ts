@@ -26,9 +26,14 @@ const Header = styled('header', {
   strong: {
     color: '$white',
     fontWeight: '$medium',
-    fontSize: '$3',
     '&:hover': {
       color: 'inherit',
+    },
+    '@sm': {
+      fontSize: '$4',
+    },
+    '@md': {
+      fontSize: '$3',
     },
   },
 })
@@ -37,17 +42,27 @@ const Forked = styled('div', {
   flexDirection: 'column',
 
   span: {
-    fontSize: '$1',
     color: '$gray300',
+    '@sm': {
+      fontSize: '$2',
+    },
+    '@md': {
+      fontSize: '$1',
+    },
   },
 })
 
 const Description = styled('p', {
-  fontSize: '$2',
   color: '$gray300',
   lineHeight: '$3',
   flex: '1',
   pr: '$3',
+  '@sm': {
+    fontSize: '$3',
+  },
+  '@md': {
+    fontSize: '$2',
+  },
 })
 
 const Language = styled('div', {
@@ -57,6 +72,12 @@ const Language = styled('div', {
   span: {
     fontSize: '$1',
     color: '$gray300',
+    '@sm': {
+      fontSize: '$2',
+    },
+    '@md': {
+      fontSize: '$1',
+    },
   },
 })
 
