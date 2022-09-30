@@ -2,7 +2,15 @@ import { styled } from 'stitches.config'
 
 const Container = styled('div', {
   maxW: '963px',
-  mx: 'auto',
+  '@sm': {
+    mx: '$4'
+  },
+  '@md': {
+    mx: '$4'
+  },
+  '@lg': {
+    mx: 'auto',
+  },
 })
 
 const Content = styled('main', {

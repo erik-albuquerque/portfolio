@@ -1,5 +1,6 @@
 import { Link, Paragraph } from '@components'
 import { appsImagesSrc } from '@constants'
+import { useMediaQuery } from '@hooks'
 import Image from 'next/image'
 import { Container, Content, Wrapper } from './styles'
 
@@ -16,9 +17,15 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
 
   const imageSrc = appsImagesSrc[name]
 
+  const { isMobile } = useMediaQuery()
+
   return (
     <Container>
-      <Content>
+      <Content
+        style={{
+          flexDirection: !isMobile ? 'column' : 'row',
+        }}
+      >
         <Image
           src={imageSrc}
           objectFit="cover"
@@ -26,6 +33,7 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
           height={40}
           alt={name}
         />
+
         <Wrapper>
           <Link
             href={url}
@@ -37,7 +45,7 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
           >
             {name}
           </Link>
-          <Paragraph fontSize="sm">{description}</Paragraph>
+          {isMobile && <Paragraph fontSize="sm">{description}</Paragraph>}
         </Wrapper>
       </Content>
     </Container>
