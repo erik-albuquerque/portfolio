@@ -34,7 +34,7 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
           <Title>Projects.</Title>
 
           <Article title="Github Pinned">
-            <Masonry breakpointCols={!isMobile ? 1 : 2}>
+            <Masonry breakpointCols={isMobile ? 1 : 2}>
               {pinnedRepositories.length > 0 &&
                 pinnedRepositories.map((repo) => (
                   <Repo key={repo.id} {...repo} />

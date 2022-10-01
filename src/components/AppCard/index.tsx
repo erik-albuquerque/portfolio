@@ -23,7 +23,7 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
     <Container>
       <Content
         style={{
-          flexDirection: !isMobile ? 'column' : 'row',
+          flexDirection: isMobile ? 'column' : 'row',
         }}
       >
         <Image
@@ -45,7 +45,7 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
           >
             {name}
           </Link>
-          {isMobile && <Paragraph fontSize="sm">{description}</Paragraph>}
+          {!isMobile && <Paragraph fontSize="sm">{description}</Paragraph>}
         </Wrapper>
       </Content>
     </Container>
