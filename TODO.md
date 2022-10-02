@@ -7,8 +7,8 @@
 - [ ] responsiveness:
   - [x] Home
   - [x] Projects
-  - [ ] About
-  - [ ] Tools
+  - [x] About
+  - [x] Tools
 - [ ] Components
   - [x] Paragraph
   - [x] Link

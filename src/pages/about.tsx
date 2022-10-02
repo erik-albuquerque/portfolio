@@ -7,6 +7,7 @@ import {
   socials,
   techs
 } from '@constants'
+import { useMediaQuery } from '@hooks'
 import {
   AboutSite,
   Avatar,
@@ -24,6 +25,8 @@ import { Fragment, ReactElement } from 'react'
 import { NextPageWithLayout } from './_app'
 
 const About: NextPageWithLayout = () => {
+  const { isMobile } = useMediaQuery()
+
   const suffix = (techId: number) =>
     techs[techs.length - 1] === techs[techId]
       ? '.'
@@ -37,8 +40,32 @@ const About: NextPageWithLayout = () => {
         <title>About | Érik Albuquerque</title>
       </Head>
 
-      <Content>
+      <Content
+        style={
+          isMobile
+            ? {
+                flexDirection: 'column',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }
+            : undefined
+        }
+      >
         <Wrapper>
+          {isMobile && (
+            <Wrapper>
+              <Avatar
+                src="/images/me.png"
+                size="sm"
+                style={{
+                  borderRadius: '100%',
+                  alignSelf: 'center'
+                }}
+                alt="Érik Albuquerque"
+              />
+            </Wrapper>
+          )}
+
           <Title>About me.</Title>
 
           <Section>
@@ -214,21 +241,26 @@ const About: NextPageWithLayout = () => {
             </AboutSite>
           </Article>
         </Wrapper>
-        <Wrapper>
-          <Wrapper>
-            <Avatar src="/images/me.png" size="md" alt="Érik Albuquerque" />
-          </Wrapper>
 
-          <Article title="I ♥">
-            <Paragraph lineHeight="md">
-              Technology, Animals, Games, Series, <br />
-              Music, Pixel art, Coffee and some <br />
-              other things.
-            </Paragraph>
-          </Article>
-
+        {isMobile ? (
           <Socials data={socials} />
-        </Wrapper>
+        ) : (
+          <Wrapper>
+            <Wrapper>
+              <Avatar src="/images/me.png" size="md" alt="Érik Albuquerque" />
+            </Wrapper>
+
+            <Article title="I ♥">
+              <Paragraph lineHeight="md">
+                Technology, Animals, Games, Series, <br />
+                Music, Pixel art, Coffee and some <br />
+                other things.
+              </Paragraph>
+            </Article>
+
+            <Socials data={socials} />
+          </Wrapper>
+        )}
       </Content>
     </Container>
   )

@@ -2,8 +2,15 @@ import { darken } from 'polished'
 import { styled } from 'stitches.config'
 
 const Container = styled('div', {
+  display: 'flex',
+  justifyContent: 'center',
   maxW: '820px',
-  mx: 'auto',
+  '@sm': {
+    mx: '$4',
+  },
+  '@md': {
+    mx: 'auto',
+  },
 })
 
 const Content = styled('main', {
@@ -52,6 +59,7 @@ const AboutSite = styled('div', {
 const Skills = styled('div', {
   display: 'flex',
   flexDirection: 'row',
+  flexWrap: 'wrap',
   gap: '$2',
 })
 
