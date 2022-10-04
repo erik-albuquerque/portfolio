@@ -12,4 +12,5 @@ export * from './Repo'
 export * from './SetupComponent'
 export * from './Socials'
 export * from './Title'
+export * from './TopProgressBar'
 
