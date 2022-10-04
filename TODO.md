@@ -5,6 +5,10 @@
 - [ ] Button when clicked, redirect to main page
 - [x] add NProgress: Show progress loading page
 - [ ] Logo?
+- [ ] Skeleton
+  - [ ] projects page
+    - [x] Web
+    - [ ] Mobile
 - [ ] responsiveness:
   - [x] Home
   - [x] Projects

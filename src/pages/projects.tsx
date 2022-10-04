@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Article, Layout, Link, Masonry, Repo, Title } from '@components'
+import { Web } from '@components/Skeleton/Projects'
 import { useMediaQuery } from '@hooks'
 import { client, gql } from '@lib'
 import { Container, Content, Repositories, Wrapper } from '@styles/projects'
 import { RepoProps } from '@types'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { ReactElement } from 'react'
+import { ReactElement, useEffect, useState } from 'react'
 import { NextPageWithLayout } from './_app'
 
 type ProjectsProps = {
@@ -18,12 +19,32 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
   pinnedRepos,
   repos,
 }: ProjectsProps) => {
+  const [loading, setLoading] = useState(true)
+  
   const pinnedRepositories = pinnedRepos
   const repositories = repos
 
   const { isMobile } = useMediaQuery()
 
-  return (
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false)
+    }, 2000)
+
+    if (pinnedRepos) timeout
+
+    return () => clearTimeout(timeout)
+  }, [pinnedRepos])
+
+  return loading ? (
+    <Container>
+      <Content>
+        <Wrapper>
+          <Web />
+        </Wrapper>
+      </Content>
+    </Container>
+  ) : (
     <Container>
       <Head>
         <title>Projects | Érik Albuquerque</title>
@@ -72,7 +93,7 @@ Projects.getLayout = function getLayout(page: ReactElement) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  const { data } = await client.query({
+  const { data, loading } = await client.query({
     query: gql`
       {
         user(login: "erik-albuquerque") {
@@ -168,6 +189,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       pinnedRepos,
       repos,
+      loading,
     },
   }
 }
