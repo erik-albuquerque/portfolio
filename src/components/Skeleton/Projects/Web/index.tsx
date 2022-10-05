@@ -1,7 +1,7 @@
 import { Heading } from '../../Heading'
 import { Subtitle } from '../../Subtitle'
-import { ListRepos } from './ListRepos'
-import { MasonryRepos } from './MasonryRepos'
+import { ListRepos } from '../ListRepos'
+import { MasonryRepos } from '../MasonryRepos'
 
 const Web: React.FC = () => {
   return (

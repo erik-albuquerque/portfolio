@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Article, Layout, Link, Masonry, Repo, Title } from '@components'
-import { Web } from '@components/Skeleton/Projects'
+import { Mobile, Web } from '@components/Skeleton/Projects'
 import { useMediaQuery } from '@hooks'
 import { client, gql } from '@lib'
 import { Container, Content, Repositories, Wrapper } from '@styles/projects'
@@ -20,7 +20,7 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
   repos,
 }: ProjectsProps) => {
   const [loading, setLoading] = useState(true)
-  
+
   const pinnedRepositories = pinnedRepos
   const repositories = repos
 
@@ -29,7 +29,7 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
   useEffect(() => {
     const timeout = setTimeout(() => {
       setLoading(false)
-    }, 2000)
+    }, 5000)
 
     if (pinnedRepos) timeout
 
@@ -39,9 +39,7 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
   return loading ? (
     <Container>
       <Content>
-        <Wrapper>
-          <Web />
-        </Wrapper>
+        <Wrapper>{isMobile ? <Mobile /> : <Web />}</Wrapper>
       </Content>
     </Container>
   ) : (

@@ -5,15 +5,15 @@
 - [ ] Button when clicked, redirect to main page
 - [x] add NProgress: Show progress loading page
 - [ ] Logo?
-- [ ] Skeleton
-  - [ ] projects page
+- [x] Skeleton
+  - [x] projects page
     - [x] Web
-    - [ ] Mobile
-- [ ] responsiveness:
+    - [x] Mobile
+- [x] responsiveness:
   - [x] Home
   - [x] Projects
   - [x] About
   - [x] Tools
-- [ ] Components
+- [x] Components
   - [x] Paragraph
   - [x] Link
