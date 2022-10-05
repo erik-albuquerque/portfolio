@@ -59,7 +59,7 @@ const About: NextPageWithLayout = () => {
                 size="sm"
                 style={{
                   borderRadius: '100%',
-                  alignSelf: 'center'
+                  alignSelf: 'center',
                 }}
                 alt="Érik Albuquerque"
               />
@@ -245,8 +245,16 @@ const About: NextPageWithLayout = () => {
         {isMobile ? (
           <Socials data={socials} />
         ) : (
-          <Wrapper>
-            <Wrapper>
+          <Wrapper
+            style={{
+              alignItems: 'center',
+            }}
+          >
+            <Wrapper
+              style={{
+                alignItems: 'center',
+              }}
+            >
               <Avatar src="/images/me.png" size="md" alt="Érik Albuquerque" />
             </Wrapper>
 
