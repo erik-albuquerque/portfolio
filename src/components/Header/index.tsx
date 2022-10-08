@@ -6,6 +6,21 @@ const Header: React.FC = () => {
   return (
     <Container>
       <Content>
+        <ActiveLink href="/" shouldMatchExactHref passHref>
+          <Link
+            {...{
+              fontWeight: 'regular',
+              css: {
+                '&:hover': {
+                  color: '$white',
+                  textDecoration: 'none',
+                },
+              },
+            }}
+          >
+            Home
+          </Link>
+        </ActiveLink>
         <ActiveLink href="/projects" passHref>
           <Link
             {...{
