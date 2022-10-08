@@ -20,6 +20,9 @@ const Anchor = styled('a', {
       gray50: {
         color: '$gray50',
       },
+      gray300: {
+        color: '$gray300',
+      },
       gray400: {
         color: '$gray400',
       },

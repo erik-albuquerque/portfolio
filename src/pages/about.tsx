@@ -1,4 +1,12 @@
-import { Article, Layout, Link, Paragraph, Socials, Title } from '@components'
+import {
+  Article,
+  Layout,
+  Link,
+  Paragraph,
+  Socials,
+  SpotifyTrack,
+  Title
+} from '@components'
 import {
   career,
   certifications,
@@ -8,6 +16,7 @@ import {
   techs
 } from '@constants'
 import { useMediaQuery } from '@hooks'
+import { getCurrentPlayingTrack } from '@services'
 import {
   AboutSite,
   Avatar,
@@ -20,12 +29,20 @@ import {
   Skills,
   Wrapper
 } from '@styles/about'
+import { Track } from '@types'
+import { GetStaticProps } from 'next'
 import Head from 'next/head'
 import { Fragment, ReactElement } from 'react'
 import { NextPageWithLayout } from './_app'
 
-const About: NextPageWithLayout = () => {
+type Props = {
+  track: Track | null
+}
+
+const About: NextPageWithLayout<Props> = ({ track }: Props) => {
   const { isMobile } = useMediaQuery()
+
+  const spotifyCurrentTrack = track
 
   const suffix = (techId: number) =>
     techs[techs.length - 1] === techs[techId]
@@ -243,7 +260,17 @@ const About: NextPageWithLayout = () => {
         </Wrapper>
 
         {isMobile ? (
-          <Socials data={socials} />
+          <>
+            <Article
+              title={spotifyCurrentTrack?.isPlaying ? 'in 🎧' : 'in 🎧, but ⏸'}
+            >
+              {spotifyCurrentTrack && (
+                <SpotifyTrack track={spotifyCurrentTrack} />
+              )}
+            </Article>
+
+            <Socials data={socials} />
+          </>
         ) : (
           <Wrapper
             style={{
@@ -267,6 +294,16 @@ const About: NextPageWithLayout = () => {
             </Article>
 
             <Socials data={socials} />
+
+            <Article
+              title={spotifyCurrentTrack?.isPlaying ? 'in 🎧' : 'in 🎧, but ⏸'}
+            >
+              {spotifyCurrentTrack && (
+                <SpotifyTrack track={spotifyCurrentTrack} />
+              )}
+            </Article>
+
+            {/* <Socials data={socials} /> */}
           </Wrapper>
         )}
       </Content>
@@ -276,6 +313,17 @@ const About: NextPageWithLayout = () => {
 
 About.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>
+}
+
+export const getStaticProps: GetStaticProps = async () => {
+  const track: Track | null = await getCurrentPlayingTrack()
+
+  return {
+    props: {
+      track,
+    },
+    revalidate: 10, // 60 1 min
+  }
 }
 
 export default About

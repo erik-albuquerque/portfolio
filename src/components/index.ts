@@ -12,6 +12,7 @@ export * from './Repo'
 export * from './SetupComponent'
 export * from './Skeleton'
 export * from './Socials'
+export * from './SpotifyTrack'
 export * from './Title'
 export * from './TopProgressBar'
 
