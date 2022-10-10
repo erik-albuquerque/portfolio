@@ -16,7 +16,7 @@ import {
   techs
 } from '@constants'
 import { useMediaQuery } from '@hooks'
-import { getCurrentPlayingTrack } from '@services'
+import { getCurrentPlayingTrack, updateCurrentPlayingTrack } from '@services'
 import {
   AboutSite,
   Avatar,
@@ -30,19 +30,31 @@ import {
   Wrapper
 } from '@styles/about'
 import { Track } from '@types'
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
-import { Fragment, ReactElement } from 'react'
+import { parseCookies } from 'nookies'
+import { Fragment, ReactElement, useEffect, useState } from 'react'
 import { NextPageWithLayout } from './_app'
 
 type Props = {
   track: Track | null
+  token: string
 }
 
-const About: NextPageWithLayout<Props> = ({ track }: Props) => {
+const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
   const { isMobile } = useMediaQuery()
 
-  const spotifyCurrentTrack = track
+  const [spotifyCurrentTrack, setSpotifyCurrentTrack] = useState<Track | null>(
+    track
+  )
+
+  useEffect(() => {
+    async function updateCurrentTrack() {
+      const updatedTrack = await updateCurrentPlayingTrack(token)
+      setSpotifyCurrentTrack(updatedTrack)
+    }
+    updateCurrentTrack()
+  }, [token])
 
   const suffix = (techId: number) =>
     techs[techs.length - 1] === techs[techId]
@@ -315,14 +327,15 @@ About.getLayout = function getLayout(page: ReactElement) {
   return <Layout>{page}</Layout>
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const track: Track | null = await getCurrentPlayingTrack()
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+  const track: Track | null = await getCurrentPlayingTrack(ctx)
+  const cookies = parseCookies(ctx)
 
   return {
     props: {
       track,
+      token: cookies.PLAYER_AT,
     },
-    revalidate: 10, // 60 1 min
   }
 }
 
