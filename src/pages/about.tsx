@@ -49,6 +49,8 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
   )
 
   useEffect(() => {
+    if (!token) return
+    
     async function updateCurrentTrack() {
       const updatedTrack = await updateCurrentPlayingTrack(token)
       setSpotifyCurrentTrack(updatedTrack)
@@ -273,13 +275,11 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
 
         {isMobile ? (
           <>
-            <Article
-              title={spotifyCurrentTrack?.isPlaying ? 'in 🎧' : 'in 🎧, but ⏸'}
-            >
-              {spotifyCurrentTrack && (
+            {spotifyCurrentTrack && (
+              <Article title="in 🎧">
                 <SpotifyTrack track={spotifyCurrentTrack} />
-              )}
-            </Article>
+              </Article>
+            )}
 
             <Socials data={socials} />
           </>
@@ -307,13 +307,11 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
 
             <Socials data={socials} />
 
-            <Article
-              title={spotifyCurrentTrack?.isPlaying ? 'in 🎧' : 'in 🎧, but ⏸'}
-            >
-              {spotifyCurrentTrack && (
+            {spotifyCurrentTrack && (
+              <Article title="in 🎧">
                 <SpotifyTrack track={spotifyCurrentTrack} />
-              )}
-            </Article>
+              </Article>
+            )}
 
             {/* <Socials data={socials} /> */}
           </Wrapper>
