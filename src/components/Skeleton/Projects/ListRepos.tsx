@@ -17,10 +17,10 @@ const ListRepos: React.FC<Props> = ({ isMobile = false }: Props) => {
     >
       <rect x={isMobile ? 16 : 0} rx="5" ry="5" width="112" height="24" />
 
-      <rect x={isMobile ? 0 : 20} y="46" rx="5" ry="5" width="74" height="19" />
-      <rect x={isMobile ? 0 : 20} y="80" rx="5" ry="5" width="30" height="19" />
+      <rect x={isMobile ? 30 : 20} y="46" rx="5" ry="5" width="74" height="19" />
+      <rect x={isMobile ? 30 : 20} y="80" rx="5" ry="5" width="30" height="19" />
       <rect
-        x={isMobile ? 0 : 20}
+        x={isMobile ? 30 : 20}
         y="116"
         rx="5"
         ry="5"
@@ -28,7 +28,7 @@ const ListRepos: React.FC<Props> = ({ isMobile = false }: Props) => {
         height="19"
       />
       <rect
-        x={isMobile ? 0 : 20}
+        x={isMobile ? 30 : 20}
         y="150"
         rx="5"
         ry="5"
@@ -36,7 +36,7 @@ const ListRepos: React.FC<Props> = ({ isMobile = false }: Props) => {
         height="19"
       />
       <rect
-        x={isMobile ? 0 : 20}
+        x={isMobile ? 30 : 20}
         y="186"
         rx="5"
         ry="5"
@@ -44,7 +44,7 @@ const ListRepos: React.FC<Props> = ({ isMobile = false }: Props) => {
         height="19"
       />
       <rect
-        x={isMobile ? 0 : 20}
+        x={isMobile ? 30 : 20}
         y="220"
         rx="5"
         ry="5"
@@ -52,7 +52,7 @@ const ListRepos: React.FC<Props> = ({ isMobile = false }: Props) => {
         height="19"
       />
       <rect
-        x={isMobile ? 0 : 20}
+        x={isMobile ? 30 : 20}
         y="250"
         rx="5"
         ry="5"

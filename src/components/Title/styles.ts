@@ -7,6 +7,7 @@ const Text = styled('h1', {
   color: '$gray50',
   '@sm': {
     fontSize: '$6',
+    ml: '$2'
   },
   '@md': {
     fontSize: '$7',

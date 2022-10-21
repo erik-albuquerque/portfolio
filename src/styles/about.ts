@@ -6,7 +6,7 @@ const Container = styled('div', {
   justifyContent: 'center',
   maxW: '820px',
   '@sm': {
-    mx: '$4',
+    mx: '$3',
   },
   '@md': {
     mx: 'auto',
@@ -26,8 +26,13 @@ const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: '$4',
   w: '100%',
+  '@sm': {
+    gap: '1.5rem',
+  },
+  '@md': {
+    gap: '$4',
+  },
 })
 
 const Section = styled('section', {

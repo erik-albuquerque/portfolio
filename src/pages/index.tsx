@@ -20,8 +20,7 @@ const Home: NextPage = () => {
             Web Front-end.
           </Title>
           <Paragraph lineHeight="sm">
-            Web Front-end and sometimes I like to do some <br />
-            Pixel Art.
+            Web Front-end and sometimes I like to do some Pixel Art.
           </Paragraph>
         </Wrapper>
       </Content>

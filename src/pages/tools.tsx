@@ -7,6 +7,7 @@ import {
   Title
 } from '@components'
 import { appsAndServices, setup } from '@constants'
+import { useMediaQuery } from '@hooks'
 import {
   Apps,
   Container,
@@ -20,6 +21,8 @@ import { ReactElement } from 'react'
 import { NextPageWithLayout } from './_app'
 
 const Tools: NextPageWithLayout = () => {
+  const { isMobile } = useMediaQuery()
+
   return (
     <Container>
       <Head>
@@ -50,7 +53,7 @@ const Tools: NextPageWithLayout = () => {
             </Apps>
           </Article>
 
-          <Article title="Setup">
+          <Article title="Setup" style={{marginTop: isMobile ? "1rem" : undefined}}>
             <Paragraph>
               My setup for designing, coding and some other things.
             </Paragraph>

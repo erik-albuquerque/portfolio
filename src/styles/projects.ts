@@ -3,7 +3,7 @@ import { styled } from 'stitches.config'
 const Container = styled('div', {
   maxW: '720px',
   '@sm': {
-    mx: '$4'
+    mx: '$2',
   },
   '@md': {
     mx: 'auto',
@@ -18,7 +18,12 @@ const Wrapper = styled('div', {
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  gap: '$4',
+  '@sm': {
+    gap: '1.5rem',
+  },
+  '@md': {
+    gap: '$4',
+  },
 })
 
 const Repositories = styled(Wrapper, {

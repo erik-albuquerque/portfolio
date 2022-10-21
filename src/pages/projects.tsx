@@ -63,7 +63,9 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
 
           <Article title="All projects">
             {repositories.length > 0 && (
-              <Repositories>
+              <Repositories
+                style={{ marginLeft: isMobile ? '1.5rem' : undefined }}
+              >
                 {repositories.map((repo) => (
                   <Link
                     key={repo.id}

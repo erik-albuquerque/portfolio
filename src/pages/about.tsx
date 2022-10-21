@@ -50,7 +50,7 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
 
   useEffect(() => {
     if (!token) return
-    
+
     async function updateCurrentTrack() {
       const updatedTrack = await updateCurrentPlayingTrack(token)
       setSpotifyCurrentTrack(updatedTrack)
@@ -105,9 +105,9 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
               {`I'm`} <b>22</b> years.
             </Paragraph>
 
-            <Paragraph lineHeight="md">
+            <Paragraph lineHeight={isMobile ? 'sm' : 'md'}>
               {`I'm`} a <b>Front-End Developer</b>, based in <b>Brazil</b>. In
-              2023 <br />I will start my degree in software engineering at{' '}
+              2023 I will start my degree in software engineering at{' '}
               <Link
                 href="https://estacio.br/"
                 isTargetBlank
@@ -119,8 +119,7 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
               >
                 Estácio
               </Link>
-              . <br />
-              Sometimes I like to do some <b>Pixel Art</b>.
+              . Sometimes I like to do some <b>Pixel Art</b>.
             </Paragraph>
 
             <Paragraph lineHeight="lg">Welcome, have fun! 😌</Paragraph>
