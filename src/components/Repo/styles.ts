@@ -11,7 +11,7 @@ const Content = styled('div', {
   br: '$3',
   p: '$3',
   w: '100%',
-  minW: '22rem',
+  minW: '20rem',
   transition: 'filter 0.2s',
   '&:hover': {
     filter: 'brightness(0.9)',
@@ -29,12 +29,7 @@ const Header = styled('header', {
     '&:hover': {
       color: 'inherit',
     },
-    '@sm': {
-      fontSize: '$4',
-    },
-    '@md': {
-      fontSize: '$3',
-    },
+    fontSize: '$3',
   },
 })
 const Forked = styled('div', {
@@ -57,12 +52,7 @@ const Description = styled('p', {
   lineHeight: '$3',
   flex: '1',
   pr: '$3',
-  '@sm': {
-    fontSize: '$3',
-  },
-  '@md': {
-    fontSize: '$2',
-  },
+  fontSize: '$2',
 })
 
 const Language = styled('div', {
@@ -72,12 +62,6 @@ const Language = styled('div', {
   span: {
     fontSize: '$1',
     color: '$gray300',
-    '@sm': {
-      fontSize: '$2',
-    },
-    '@md': {
-      fontSize: '$1',
-    },
   },
 })
 
