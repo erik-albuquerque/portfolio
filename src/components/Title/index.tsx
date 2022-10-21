@@ -1,14 +1,14 @@
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 import { Container, Text } from './styles'
 
-type TitleProps = {
+type TitleProps = HTMLAttributes<HTMLHeadingElement> & {
   children: ReactNode
 }
 
-const Title: React.FC<TitleProps> = ({ children }: TitleProps) => {
+const Title: React.FC<TitleProps> = ({ children, ...rest }: TitleProps) => {
   return (
     <Container>
-      <Text>{children}</Text>
+      <Text {...rest}>{children}</Text>
     </Container>
   )
 }

@@ -50,7 +50,7 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
 
       <Content>
         <Wrapper>
-          <Title>Projects.</Title>
+          <Title style={{ marginLeft: '0.5rem' }} >Projects.</Title>
 
           <Article title="Github Pinned">
             <Masonry breakpointCols={isMobile ? 1 : 2}>
