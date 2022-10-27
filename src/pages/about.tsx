@@ -55,7 +55,12 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
       const updatedTrack = await updateCurrentPlayingTrack(token)
       setSpotifyCurrentTrack(updatedTrack)
     }
-    updateCurrentTrack()
+
+    const updateCurrentTrackInterval = setInterval(async () => {
+      await updateCurrentTrack()
+    }, 15000) // 15 sec
+
+    return () => clearInterval(updateCurrentTrackInterval)
   }, [token])
 
   const suffix = (techId: number) =>

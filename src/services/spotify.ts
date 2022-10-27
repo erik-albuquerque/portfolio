@@ -81,28 +81,27 @@ const getCurrentPlayingTrack = async (
   }
 }
 
-const apiCallDelay = (ms: number) =>
-  new Promise((resolve) => setTimeout(resolve, ms))
+// const apiCallDelay = (ms: number) =>
+//   new Promise((resolve) => setTimeout(resolve, ms))
 
 const updateCurrentPlayingTrack = async (token: string) => {
   spotifyApi.setAccessToken(token)
 
   try {
-    const currentPlayingTrackState = await getCurrentPlayingTrackState()
+    // const currentPlayingTrackState = await getCurrentPlayingTrackState()
 
-    const timeLeft = (() => {
-      if (currentPlayingTrackState.item?.duration_ms) {
-        if (currentPlayingTrackState.progress_ms) {
-          return (
-            currentPlayingTrackState.item.duration_ms -
-            currentPlayingTrackState.progress_ms
-          )
-        }
-      }
-      return 30 // seconds
-    })()
+    // const timeLeft = (() => {
+    //   if (currentPlayingTrackState.item?.duration_ms) {
+    //     if (currentPlayingTrackState.progress_ms) {
+    //       return (
+    //         currentPlayingTrackState.item.duration_ms -
+    //         currentPlayingTrackState.progress_ms
+    //       )
+    //     }
+    //   }
+    // })()
 
-    await apiCallDelay(timeLeft)
+    // await apiCallDelay(timeLeft)
 
     return await getMyCurrentPlayingTrack()
   } catch (error) {
