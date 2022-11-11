@@ -17,10 +17,10 @@ const Home: NextPage = () => {
           <Title>
             Hi, <br />
             {`I'm Érik,`} <br />
-            Web Front-end.
+            Dev Front-end.
           </Title>
           <Paragraph lineHeight="sm">
-            Web Front-end and sometimes I like to do some Pixel Art.
+            Dev Front-end and sometimes I like to do some Pixel Art.
           </Paragraph>
         </Wrapper>
       </Content>
