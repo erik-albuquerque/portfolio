@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
+import Head from 'next/head'
 import type { ReactElement, ReactNode } from 'react'
 
 import { globalStyles } from 'stitches.config'
@@ -30,6 +31,12 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
 
   return getLayout(
     <>
+      <Head>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0"
+        />
+      </Head>
       <TopProgressBar />
       <Component {...pageProps} />
     </>
