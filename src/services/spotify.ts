@@ -62,11 +62,11 @@ const getMyCurrentPlayingTrack = async () => {
   return track
 }
 
-const getCurrentPlayingTrackState = async () => {
-  const trackState = await spotifyApi.getMyCurrentPlaybackState()
+// const getCurrentPlayingTrackState = async () => {
+//   const trackState = await spotifyApi.getMyCurrentPlaybackState()
 
-  return trackState.body
-}
+//   return trackState.body
+// }
 
 const getCurrentPlayingTrack = async (
   ctx: GetServerSidePropsContext
