@@ -6,7 +6,7 @@ import {
   SetupComponent,
   Title
 } from '@components'
-import { appsAndServices, setup } from '../../data.json'
+import dataJson from '../../data.json'
 import { useMediaQuery } from '@hooks'
 import {
   Apps,
@@ -22,6 +22,8 @@ import { NextPageWithLayout } from './_app'
 
 const Tools: NextPageWithLayout = () => {
   const { isMobile } = useMediaQuery()
+
+  const { appsAndServices, setup } = dataJson
 
   return (
     <Container>

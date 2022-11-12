@@ -7,14 +7,7 @@ import {
   SpotifyTrack,
   Title
 } from '@components'
-import {
-  career,
-  certifications,
-  portfolio,
-  skills,
-  socials,
-  techs
-} from '../../data.json'
+import dataJson from '../../data.json'
 import { useMediaQuery } from '@hooks'
 import { getCurrentPlayingTrack, updateCurrentPlayingTrack } from '@services'
 import {
@@ -47,6 +40,14 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
   const [spotifyCurrentTrack, setSpotifyCurrentTrack] = useState<Track | null>(
     track
   )
+
+  const { 
+    career,
+    certifications,
+    portfolio,
+    skills,
+    socials,
+    techs } = dataJson
 
   useEffect(() => {
     if (!token) return

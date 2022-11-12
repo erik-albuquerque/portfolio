@@ -1,5 +1,5 @@
 import { Link, Paragraph } from '@components'
-import { appsImagesSrc } from '../../../data.json'
+import dataJson from '../../../data.json'
 import { useMediaQuery } from '@hooks'
 import Image from 'next/image'
 import { Container, Content, Wrapper } from './styles'
@@ -15,7 +15,7 @@ type Props = {
 const AppCard: React.FC<Props> = ({ data }: Props) => {
   const { name, description, url } = data
 
-  const appsImagesSrcWithType = appsImagesSrc as { [key: string]: string }
+  const appsImagesSrcWithType = dataJson.appsImagesSrc as { [key: string]: string }
 
   const imageSrc = appsImagesSrcWithType[name]
 
