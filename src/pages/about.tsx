@@ -22,6 +22,7 @@ import {
   Wrapper
 } from '@styles/about'
 import { Track } from '@types'
+import { getAge } from '@utils'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
@@ -37,17 +38,13 @@ type Props = {
 const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
   const { isMobile } = useMediaQuery()
 
+  const yearsOld = getAge()
+
   const [spotifyCurrentTrack, setSpotifyCurrentTrack] = useState<Track | null>(
     track
   )
 
-  const { 
-    career,
-    certifications,
-    portfolio,
-    skills,
-    socials,
-    techs } = dataJson
+  const { career, certifications, portfolio, skills, socials, techs } = dataJson
 
   useEffect(() => {
     if (!token) return
@@ -108,7 +105,7 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
           <Section>
             <Paragraph lineHeight="lg">
               Hi, {`I'm`} <b>Érik Albuquerque</b>. <br />
-              {`I'm`} <b>22</b> years.
+              {`I'm`} <b>{yearsOld}</b> years.
             </Paragraph>
 
             <Paragraph lineHeight={isMobile ? 'sm' : 'md'}>
@@ -299,7 +296,11 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
                 alignItems: 'center',
               }}
             >
-              <Avatar src="https://github.com/erik-albuquerque.png" size="md" alt="Érik Albuquerque" />
+              <Avatar
+                src="https://github.com/erik-albuquerque.png"
+                size="md"
+                alt="Érik Albuquerque"
+              />
             </Wrapper>
 
             <Article title="I ♥">
