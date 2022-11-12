@@ -14,5 +14,6 @@ export * from './Skeleton'
 export * from './Socials'
 export * from './SpotifyTrack'
 export * from './Title'
+export * from './Tooltip'
 export * from './TopProgressBar'
 
