@@ -8,6 +8,8 @@ const Content = styled('div', {
   display: 'flex',
   flexDirection: 'row',
   alignItems: 'center',
+  userSelect: 'none',
+  cursor: 'pointer',
   border: 'thin solid $gray700',
   bg: '$gray800',
   br: '$3',

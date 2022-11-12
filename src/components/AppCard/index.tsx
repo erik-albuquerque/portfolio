@@ -1,7 +1,8 @@
 import { Link, Paragraph } from '@components'
-import dataJson from '../../../data.json'
 import { useMediaQuery } from '@hooks'
 import Image from 'next/image'
+import { useCallback, useRef, useState } from 'react'
+import dataJson from '../../../data.json'
 import { Container, Content, Wrapper } from './styles'
 
 type Props = {
@@ -14,19 +15,37 @@ type Props = {
 
 const AppCard: React.FC<Props> = ({ data }: Props) => {
   const { name, description, url } = data
+  const [isHovering, setIsHovering] = useState(false)
 
-  const appsImagesSrcWithType = dataJson.appsImagesSrc as { [key: string]: string }
+  const appsImagesSrcWithType = dataJson.appsImagesSrc as {
+    [key: string]: string
+  }
 
   const imageSrc = appsImagesSrcWithType[name]
 
   const { isMobile } = useMediaQuery()
 
+  const linkRef = useRef<HTMLAnchorElement>(null)
+
+  const simulateClickOnLink = () => {
+    if (linkRef.current) {
+      linkRef.current.click()
+    }
+  }
+
+  const handleHover = useCallback((value: boolean) => setIsHovering(value), [])
+
   return (
-    <Container>
+    <Container
+      onClick={simulateClickOnLink}
+      onMouseOver={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
+    >
       <Content
         style={{
           flexDirection: isMobile ? 'column' : 'row',
         }}
+        onMouseOver={() => handleHover(true)}
       >
         <Image
           src={imageSrc}
@@ -38,11 +57,12 @@ const AppCard: React.FC<Props> = ({ data }: Props) => {
 
         <Wrapper>
           <Link
+            ref={linkRef}
             href={url}
             isTargetBlank
             {...{
-              color: 'gray50',
-              textDecoration: 'none',
+              color: isHovering ? 'blue100' : 'gray50',
+              textDecoration: isHovering ? 'underline' : 'none',
             }}
           >
             {name}

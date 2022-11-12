@@ -1,6 +1,7 @@
 import { Link } from '@components'
 import { RepoProps } from '@types'
 import { formatDate } from '@utils'
+import { useCallback, useRef, useState } from 'react'
 import { AiOutlineStar } from 'react-icons/ai'
 import { TbGitFork } from 'react-icons/tb'
 import {
@@ -21,20 +22,38 @@ const Repo: React.FC<RepoProps> = (data: RepoProps) => {
   const shortLicense =
     data.licenseInfo && data.licenseInfo.name.split(' ').slice(0, 1)
 
+  const [isHovering, setIsHovering] = useState(false)
+
   const formattedDate = formatDate(data.updatedAt)
 
+  const linkRef = useRef<HTMLAnchorElement>(null)
+
+  const simulateClickOnLink = () => {
+    if (linkRef.current) {
+      linkRef.current.click()
+    }
+  }
+
+  const handleHover = useCallback((value: boolean) => setIsHovering(value), [])
+
   return (
-    <Container>
+    <Container
+      onClick={!data.isForked ? simulateClickOnLink : undefined}
+      onMouseOver={() => handleHover(true)}
+      onMouseLeave={() => handleHover(false)}
+    >
       <Content>
         <Header>
           <Link
+            ref={linkRef}
             href={data.url}
             isTargetBlank
             {...{
               color: 'gray50',
+              textDecoration: isHovering ? 'underline' : 'none',
             }}
           >
-            <strong>{data.name}</strong>
+            {data.name}
           </Link>
           <svg
             width="16"

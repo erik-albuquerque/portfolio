@@ -7,6 +7,8 @@ const Content = styled('div', {
   flexDirection: 'column',
   gap: '$2',
   bg: '$gray800',
+  userSelect: 'none',
+  cursor: 'pointer',
   border: 'thin solid $gray700',
   br: '$3',
   p: '$3',
@@ -22,16 +24,8 @@ const Header = styled('header', {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'space-between',
-
-  strong: {
-    color: '$white',
-    fontWeight: '$medium',
-    '&:hover': {
-      color: 'inherit',
-    },
-    fontSize: '$3',
-  },
 })
+
 const Forked = styled('div', {
   display: 'flex',
   flexDirection: 'column',
