@@ -1,10 +1,13 @@
+import { getYear } from '@utils/getYear'
 import { Container, Content, Text } from './styles'
 
 const Footer = () => {
+  const year = getYear()
+
   return (
     <Container>
       <Content>
-        <Text>@ 2022 Érik Albuquerque. All Rights Reserved.</Text>
+        <Text>{`@ ${year} Érik Albuquerque. All Rights Reserved.`}</Text>
       </Content>
     </Container>
   )
