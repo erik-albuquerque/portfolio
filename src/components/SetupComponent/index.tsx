@@ -21,7 +21,7 @@ const SetupComponent: React.FC<Props> = ({ data }) => {
           isTargetBlank
           hasURL={!!url}
           {...{
-            color: 'gray400',
+            color: 'blue100',
             fontSize: 'sm',
             css: {
               alignSelf: 'flex-start',

@@ -6,7 +6,7 @@ import {
   SetupComponent,
   Title
 } from '@components'
-import { appsAndServices, setup } from '@constants'
+import { appsAndServices, setup } from '../../data.json'
 import { useMediaQuery } from '@hooks'
 import {
   Apps,

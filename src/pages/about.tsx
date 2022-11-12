@@ -14,7 +14,7 @@ import {
   skills,
   socials,
   techs
-} from '@constants'
+} from '../../data.json'
 import { useMediaQuery } from '@hooks'
 import { getCurrentPlayingTrack, updateCurrentPlayingTrack } from '@services'
 import {

@@ -1,0 +1,239 @@
+{
+  "appsAndServices": [
+    {
+      "name": "Spotify",
+      "description": "The best streaming music app.",
+      "url": "https://www.spotify.com/"
+    },
+    {
+      "name": "Figma",
+      "description": "My design tool.",
+      "url": "https://www.figma.com/"
+    },
+    {
+      "name": "Bitwarden",
+      "description": "The best password manager.",
+      "url": "https://bitwarden.com/"
+    },
+    {
+      "name": "Notion",
+      "description": "Useful for notes and tasks.",
+      "url": "https://www.notion.so/"
+    },
+    {
+      "name": "Visual Studio Code",
+      "description": "IDE where I build my code.",
+      "url": "https://code.visualstudio.com/"
+    },
+    {
+      "name": "Github",
+      "description": "Management and version code.",
+      "url": "https://github.com/"
+    },
+    {
+      "name": "Google",
+      "description": "For research and related stuff.",
+      "url": "https://www.google.com/"
+    },
+    {
+      "name": "Pomofocus",
+      "description": "Time Management App.",
+      "url": "https://pomofocus.io/"
+    },
+    {
+      "name": "Discord",
+      "description": "Network and related stuff.",
+      "url": "https://discord.com/"
+    }
+  ],
+  "appsImagesSrc": {
+    "Spotify": "/images/icons/spotify-icon.png",
+    "Figma": "/images/icons/figma-icon.png",
+    "Bitwarden": "/images/icons/bitwarden-icon.png",
+    "Notion": "/images/icons/notion-icon.png",
+    "Visual Studio Code": "/images/icons/icon-vscode.png",
+    "Github": "/images/icons/icon-github.png",
+    "Google": "/images/icons/icon-google.png",
+    "Pomofocus": "/images/icons/icon-pomofocus.png",
+    "Discord": "/images/icons/icon-discord.png"
+  },
+  "career": [
+    {
+      "name": "Scientific Initiation Fellow",
+      "company": {
+        "name": "IFCE",
+        "url": "https://ifce.edu.br/"
+      },
+      "address": {
+        "city": "Paracuru",
+        "state": "CE"
+      },
+      "period": "Feb 2019 - May 2019 - 4 months"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Discover Trilha Conectar",
+      "company": {
+        "name": "Rocketseat",
+        "url": "https://www.rocketseat.com.br/"
+      },
+      "credential": {
+        "credentialId": " dcb3a0ec-0465-42ed-a140-a10263d96f8f",
+        "url": "https://drive.google.com/file/d/1bHOL4RTxG8yV_TryuzuBKudwwxvIK07E/view"
+      },
+      "period": "Issued Sep 2022 - No Expiration Date"
+    },
+    {
+      "name": "Ignite Trilha React.Js",
+      "company": {
+        "name": "Rocketseat",
+        "url": "https://www.rocketseat.com.br/"
+      },
+      "credential": {
+        "credentialId": "358a8f0b-ffe5-4f6b-af5f-97bf1e288870",
+        "url": "https://drive.google.com/file/d/1luA5ZzfR2sLKsu5LlKbDwA1b7dOLwp-G/view"
+      },
+      "period": "Issued in Jul 2022 - No expiration date"
+    },
+    {
+      "name": "Introduction to Programming Using JavaScript",
+      "company": {
+        "name": "Sololearn",
+        "url": "https://www.sololearn.com/home"
+      },
+      "credential": {
+        "credentialId": "",
+        "url": "https://www.sololearn.com/Certificate/CT-PETE4I8F/jpg"
+      },
+      "period": "Issued Nov 2019 · No Expiration Date"
+    }
+  ],
+  "portfolio": [
+    {
+      "title": "Designed",
+      "name": "Figma",
+      "url": "https://www.figma.com/"
+    },
+    {
+      "title": "IDE",
+      "name": "Visual Studio Code",
+      "url": "https://code.visualstudio.com/"
+    },
+    {
+      "title": "Hosted by",
+      "name": "Vercel",
+      "url": "https://vercel.com/"
+    },
+    {
+      "title": "Font",
+      "name": "Inter",
+      "url": "https://fonts.google.com/specimen/Inter?query=Inter"
+    }
+  ],
+  "setup": [
+    {
+      "title": "Notebook HP 1000 14”",
+      "description": "i5 3° gen, 8 RAM, 500 GB",
+      "url": ""
+    },
+    {
+      "title": "Monitor",
+      "description": "TV LG 29” - Support Monitor",
+      "url": "https://www.lg.com/br/monitores/lg-29LN300B-PC"
+    },
+    {
+      "title": "Mic",
+      "description": "BM800 Giant",
+      "url": "https://produto.mercadolivre.com.br/MLB-1978445240-microfone-estudio-bm800-usb-aranha-braco-pop-filter-_JM?matt_tool=88695644&matt_word=&matt_source=google&matt_campaign_id=14300459461&matt_ad_group_id=126793517756&matt_match_type=&matt_network=g&matt_device=c&matt_creative=543111991139&matt_keyword=&matt_ad_position=&matt_ad_type=pla&matt_merchant_id=109549604&matt_product_id=MLB1978445240&matt_product_partition_id=1415060497196&matt_target_id=aud-329638142615:pla-1415060497196&gclid=CjwKCAjw4c-ZBhAEEiwAZ105RZlQd7uFd-sQ2oYAz0RXKqZjXjZRnV7uqTUTSeQf2g55n2hZ-aSffhoC6uEQAvD_BwE"
+    },
+    {
+      "title": "Mouse",
+      "description": "HP Gaming Mouse M160",
+      "url": "https://www.amazon.com.br/MOUSE-GAMER-HP-MULTICORES-PRETO/dp/B0827JHZN9/ref=asc_df_B0827JHZN9/?tag=googleshopp00-20&linkCode=df0&hvadid=379708004298&hvpos=&hvnetw=g&hvrand=2045383884092739590&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=20089&hvtargid=pla-906126860391&psc=1"
+    },
+    {
+      "title": "Notebook Stand",
+      "description": "ST35031 Black - Masticmol",
+      "url": "https://www.amazon.com.br/SUPORTE-PARA-NOTEBOOK-ST35031-PRETO/dp/B075DWMGDK/ref=sr_1_11?__mk_pt_BR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=20KKDZC1QEF54&keywords=Notebook+Stand+plastico&qid=1664375522&s=electronics&sprefix=notebook+stand+plastico%2Celectronics%2C249&sr=1-11"
+    }
+  ],
+  "skills": [
+    {
+      "name": "typescript",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "javascript",
+      "url": "https://www.javascript.com/"
+    },
+    {
+      "name": "reactjs",
+      "url": "https://reactjs.org/"
+    },
+    {
+      "name": "react-native",
+      "url": "https://reactnative.dev"
+    },
+    {
+      "name": "nextjs",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "name": "css",
+      "url": "https://www.w3schools.com/css/"
+    },
+    {
+      "name": "html",
+      "url": "https://www.w3schools.com/html/"
+    }
+  ],
+  "socials": [
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/in/erik-albuquerque/"
+    },
+    {
+      "name": "Github",
+      "url": "https://github.com/erik-albuquerque"
+    },
+    {
+      "name": "Twitter",
+      "url": "https://twitter.com/albuquerik"
+    },
+    {
+      "name": "Instagram",
+      "url": "https://www.instagram.com/albuquerik"
+    }
+  ],
+  "techs": [
+    {
+      "name": "Github API",
+      "url": "https://docs.github.com/en/graphql"
+    },
+    {
+      "name": "Graphql",
+      "url": "https://graphql.org/"
+    },
+    {
+      "name": "Apollo Client",
+      "url": "https://www.apollographql.com/docs/react/"
+    },
+    {
+      "name": "React.js",
+      "url": "https://reactjs.org/"
+    },
+    {
+      "name": "Next.js",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "name": "TypeScript",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "Stitches",
+      "url": "https://stitches.dev/"
+    }
+  ]
+}
