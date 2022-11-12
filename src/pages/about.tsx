@@ -7,7 +7,6 @@ import {
   SpotifyTrack,
   Title
 } from '@components'
-import dataJson from '../../data.json'
 import { useMediaQuery } from '@hooks'
 import { getCurrentPlayingTrack, updateCurrentPlayingTrack } from '@services'
 import {
@@ -27,6 +26,7 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
 import { Fragment, ReactElement, useEffect, useState } from 'react'
+import dataJson from '../../data.json'
 import { NextPageWithLayout } from './_app'
 
 type Props = {
@@ -92,7 +92,7 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
           {isMobile && (
             <Wrapper>
               <Avatar
-                src="/images/me.png"
+                src="https://github.com/erik-albuquerque.png"
                 size="sm"
                 style={{
                   borderRadius: '100%',
@@ -299,7 +299,7 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
                 alignItems: 'center',
               }}
             >
-              <Avatar src="/images/me.png" size="md" alt="Érik Albuquerque" />
+              <Avatar src="https://github.com/erik-albuquerque.png" size="md" alt="Érik Albuquerque" />
             </Wrapper>
 
             <Article title="I ♥">
