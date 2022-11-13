@@ -1,8 +1,29 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { ActiveLink, Link } from '@components'
-import React from 'react'
+import { useBirthday } from '@hooks/useBirthday'
+import React, { useCallback, useEffect, useState } from 'react'
 import { Container, Content } from './styles'
 
 const Header: React.FC = () => {
+  const { isBirthday, isBirthdayLeft } = useBirthday()
+  const [emoji, setEmoji] = useState('')
+
+  const emojis = ['🎂', '🎉']
+
+  const getEmoji = useCallback(() => {
+    if (isBirthday) {
+      setEmoji(emojis[1])
+    } else if (isBirthdayLeft) {
+      setEmoji(emojis[0])
+    } else {
+      setEmoji('')
+    }
+  }, [emojis, isBirthday, isBirthdayLeft])
+
+  useEffect(() => {
+    getEmoji()
+  }, [getEmoji])
+
   return (
     <Container>
       <Content>
@@ -48,7 +69,7 @@ const Header: React.FC = () => {
               },
             }}
           >
-            About
+            About {emoji}
           </Link>
         </ActiveLink>
         <ActiveLink href="/tools" passHref>
