@@ -1,4 +1,4 @@
-import { Icon, Link } from '@components'
+import { Icon, Link, Tooltip } from '@components'
 import { Container, Content } from './styles'
 
 type Social = {
@@ -17,7 +17,16 @@ const Socials: React.FC<SocialsProps> = ({ data }: SocialsProps) => {
         {data.length > 0 &&
           data.map((social) => (
             <Link key={social.name} href={social.url} isTargetBlank>
-              <Icon name={social.name} />
+              <Tooltip
+                side="top"
+                triggerChildren={
+                  <div>
+                    <Icon name={social.name} />
+                  </div>
+                }
+              >
+                <a href={social.url}>{social.name}</a>
+              </Tooltip>
             </Link>
           ))}
       </Content>

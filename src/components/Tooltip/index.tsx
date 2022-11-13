@@ -26,7 +26,7 @@ const Tooltip = ({ children, triggerChildren, side = 'right', ...rest }: Props) 
               animationDuration: '100ms',
               animationTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
               willChange: 'transform, opacity',
-              marginLeft: '8px',
+              margin: '8px',
               display: 'flex',
               alignItems: 'center'
             }}
