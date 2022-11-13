@@ -1,3 +1,4 @@
+import { BirthdayContextProvider } from '@contexts'
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import dynamic from 'next/dynamic'
@@ -30,7 +31,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
   globalStyles()
 
   return getLayout(
-    <>
+    <BirthdayContextProvider>
       <Head>
         <meta
           name="viewport"
@@ -39,7 +40,7 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
       </Head>
       <TopProgressBar />
       <Component {...pageProps} />
-    </>
+    </BirthdayContextProvider>
   )
 }
 

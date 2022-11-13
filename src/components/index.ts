@@ -1,6 +1,7 @@
 export * from './ActiveLink'
 export * from './AppCard'
 export * from './Article'
+export * from './Birthday'
 export * from './Footer'
 export * from './Header'
 export * from './Icon'

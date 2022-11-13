@@ -1,5 +1,6 @@
 import {
   Article,
+  Birthday,
   Layout,
   Link,
   Paragraph,
@@ -22,7 +23,6 @@ import {
   Wrapper
 } from '@styles/about'
 import { Track } from '@types'
-import { getAge } from '@utils'
 import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { parseCookies } from 'nookies'
@@ -37,8 +37,6 @@ type Props = {
 
 const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
   const { isMobile } = useMediaQuery()
-
-  const yearsOld = getAge()
 
   const [spotifyCurrentTrack, setSpotifyCurrentTrack] = useState<Track | null>(
     track
@@ -105,7 +103,7 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
           <Section>
             <Paragraph lineHeight="lg">
               Hi, {`I'm`} <b>Érik Albuquerque</b>. <br />
-              {`I'm`} <b>{yearsOld}</b> years.
+              <Birthday />
             </Paragraph>
 
             <Paragraph lineHeight={isMobile ? 'sm' : 'md'}>
