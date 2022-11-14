@@ -11,7 +11,6 @@ import {
   useState
 } from 'react'
 
-
 type MessageBirthdayProps = {
   emoji: string
   text: string
@@ -32,6 +31,8 @@ type BirthdayContextProviderProps = {
 
 const BirthdayContext = createContext({} as BirthdayContextProps)
 
+const BIRTHDAY_INTERVAL_MS = 3600000 // 1 hour
+
 let birthdayInterval: NodeJS.Timer
 
 const BirthdayContextProvider = ({
@@ -46,7 +47,7 @@ const BirthdayContextProvider = ({
     {} as MessageBirthdayProps
   )
 
-  const currentDate = new Date('11/06/2022')
+  const currentDate = new Date()
 
   const birthday = new Date(`11/06/${new Date().getFullYear()} 5:40:00`)
 
@@ -76,7 +77,6 @@ const BirthdayContextProvider = ({
     'in 5 days',
   ]
 
-
   const birthdayMessages = [
     {
       emoji: '',
@@ -102,8 +102,6 @@ const BirthdayContextProvider = ({
     }
   }, [isBirthday, isBirthdayLeft])
 
-
-
   useEffect(() => {
     if (birthMonth === currentMonth && currentDay === birthdayDay) {
       handleIsBirthDay(true)
@@ -119,11 +117,10 @@ const BirthdayContextProvider = ({
       })
       
       setBirthdayMessageLeft(timeToBirthday)
-    }, 1000)
+    }, BIRTHDAY_INTERVAL_MS)
 
     return () => clearInterval(birthdayInterval)
   }, [birthday, currentDate])
-
 
   useEffect(() => {
     if (optionsTimeLeft.includes(birthdayMessageLeft)) {
@@ -133,7 +130,6 @@ const BirthdayContextProvider = ({
     }
   }, [birthdayMessageLeft, handleIsBirthDayLeft, optionsTimeLeft])
 
-
   useEffect(() => {
     handleMessage()
 
@@ -142,7 +138,14 @@ const BirthdayContextProvider = ({
 
   return (
     <BirthdayContext.Provider
-      value={{ isBirthday, birthdayMessage, isBirthdayLeft, handleIsBirthDay, birthdayMessageLeft, emojis }}
+      value={{
+        isBirthday,
+        birthdayMessage,
+        isBirthdayLeft,
+        handleIsBirthDay,
+        birthdayMessageLeft,
+        emojis,
+      }}
     >
       {children}
     </BirthdayContext.Provider>
