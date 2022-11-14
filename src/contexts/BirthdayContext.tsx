@@ -11,11 +11,19 @@ import {
   useState
 } from 'react'
 
+
+type MessageBirthdayProps = {
+  emoji: string
+  text: string
+}
+
 type BirthdayContextProps = {
   isBirthday: boolean
   isBirthdayLeft: boolean
   handleIsBirthDay: (value: boolean) => void
-  birthdayMessage: string
+  birthdayMessageLeft: string
+  birthdayMessage: MessageBirthdayProps
+  emojis: string[]
 }
 
 type BirthdayContextProviderProps = {
@@ -32,9 +40,13 @@ const BirthdayContextProvider = ({
   const [isBirthday, setIsBirthday] = useState(false)
   const [isBirthdayLeft, setIsBirthdayLeft] = useState(false)
 
-  const [birthdayMessage, setBirthdayMessage] = useState('')
+  const [birthdayMessageLeft, setBirthdayMessageLeft] = useState('')
 
-  const currentDate = new Date()
+  const [birthdayMessage, setMessageBirthday] = useState<MessageBirthdayProps>(
+    {} as MessageBirthdayProps
+  )
+
+  const currentDate = new Date('11/06/2022')
 
   const birthday = new Date(`11/06/${new Date().getFullYear()} 5:40:00`)
 
@@ -54,6 +66,8 @@ const BirthdayContextProvider = ({
     []
   )
 
+  const emojis = ['🎂', '🎉']
+
   const optionsTimeLeft = [
     'in about 1 month',
     'in 2 days',
@@ -61,6 +75,34 @@ const BirthdayContextProvider = ({
     'in 4 days',
     'in 5 days',
   ]
+
+
+  const birthdayMessages = [
+    {
+      emoji: '',
+      text: '',
+    },
+    {
+      emoji: emojis[0],
+      text: birthdayMessageLeft,
+    },
+    {
+      emoji: emojis[1],
+      text: 'Happy birthday to me!',
+    },
+  ]
+
+  const handleMessage = useCallback(() => {
+    if (isBirthday) {
+      setMessageBirthday(birthdayMessages[2])
+    } else if (isBirthdayLeft) {
+      setMessageBirthday(birthdayMessages[1])
+    } else {
+      setMessageBirthday(birthdayMessages[0])
+    }
+  }, [isBirthday, isBirthdayLeft])
+
+
 
   useEffect(() => {
     if (birthMonth === currentMonth && currentDay === birthdayDay) {
@@ -76,24 +118,31 @@ const BirthdayContextProvider = ({
         addSuffix: true,
       })
       
-      setBirthdayMessage(timeToBirthday)
-    }, 5000)
+      setBirthdayMessageLeft(timeToBirthday)
+    }, 1000)
 
     return () => clearInterval(birthdayInterval)
   }, [birthday, currentDate])
 
 
   useEffect(() => {
-    if (optionsTimeLeft.includes(birthdayMessage)) {
+    if (optionsTimeLeft.includes(birthdayMessageLeft)) {
       handleIsBirthDayLeft(true)
     } else {
       handleIsBirthDayLeft(false)
     }
-  }, [birthdayMessage, handleIsBirthDayLeft, optionsTimeLeft])
+  }, [birthdayMessageLeft, handleIsBirthDayLeft, optionsTimeLeft])
+
+
+  useEffect(() => {
+    handleMessage()
+
+    return () => handleMessage()
+  }, [handleMessage])
 
   return (
     <BirthdayContext.Provider
-      value={{ isBirthday,isBirthdayLeft, handleIsBirthDay, birthdayMessage }}
+      value={{ isBirthday, birthdayMessage, isBirthdayLeft, handleIsBirthDay, birthdayMessageLeft, emojis }}
     >
       {children}
     </BirthdayContext.Provider>
