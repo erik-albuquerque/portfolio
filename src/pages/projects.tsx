@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Article, Layout, Link, Masonry, Repo, Title } from '@components'
+import { Article, Layout, Link, Masonry, Repo, Rocket, Title } from '@components'
 import { Mobile, Web } from '@components/Skeleton/Projects'
 import { useMediaQuery } from '@hooks'
 import { client, gql } from '@lib'
@@ -84,6 +84,8 @@ const Projects: NextPageWithLayout<ProjectsProps> = ({
           </Article>
         </Wrapper>
       </Content>
+
+      <Rocket />
     </Container>
   )
 }

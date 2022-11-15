@@ -159,6 +159,8 @@ const globalStyles = globalCss({
     fontFamily: '$inter',
     bg: '$gray900',
 
+    scrollBehavior: 'smooth',
+
     '&::-webkit-scrollbar': {
       width: '4px',
     },

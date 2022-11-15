@@ -2,11 +2,9 @@ import {
   AppCard,
   Article,
   Layout,
-  Paragraph,
-  SetupComponent,
+  Paragraph, Rocket, SetupComponent,
   Title
 } from '@components'
-import dataJson from '../../data.json'
 import { useMediaQuery } from '@hooks'
 import {
   Apps,
@@ -18,6 +16,7 @@ import {
 } from '@styles/tools'
 import Head from 'next/head'
 import { ReactElement } from 'react'
+import dataJson from '../../data.json'
 import { NextPageWithLayout } from './_app'
 
 const Tools: NextPageWithLayout = () => {
@@ -69,6 +68,8 @@ const Tools: NextPageWithLayout = () => {
           </Article>
         </Wrapper>
       </Content>
+
+      <Rocket />
     </Container>
   )
 }

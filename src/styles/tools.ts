@@ -2,6 +2,7 @@ import { styled } from 'stitches.config'
 
 const Container = styled('div', {
   maxW: '963px',
+  position: 'relative',
   '@sm': {
     mx: '$3'
   },

@@ -8,6 +8,7 @@ const Container = styled('div', {
   '@md': {
     mx: 'auto',
   },
+  position: 'relative',
 })
 
 const Content = styled('main', {

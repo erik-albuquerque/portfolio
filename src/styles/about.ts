@@ -4,6 +4,7 @@ import { styled } from 'stitches.config'
 const Container = styled('div', {
   display: 'flex',
   justifyContent: 'center',
+  position: 'relative',
   maxW: '820px',
   '@sm': {
     mx: '$3',

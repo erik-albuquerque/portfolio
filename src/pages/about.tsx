@@ -4,6 +4,7 @@ import {
   Layout,
   Link,
   Paragraph,
+  Rocket,
   Socials,
   SpotifyTrack,
   Title
@@ -321,6 +322,8 @@ const About: NextPageWithLayout<Props> = ({ track, token }: Props) => {
           </Wrapper>
         )}
       </Content>
+      
+      <Rocket />
     </Container>
   )
 }
