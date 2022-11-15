@@ -12,14 +12,17 @@ const Content = styled('div', {
     bottom: '-$1',
   },
   '@md': {
+    right: '64px',
+  },
+  '@lg': {
     right: '-64px',
   },
   svg: {
     cursor: 'pointer',
-    transition: 'opacity 0.2s',
-    '&:hover': {
-      opacity: '0.7',
-    },
+    // transition: 'opacity 0.2s',
+    // '&:hover': {
+    //   opacity: '0.7',
+    // },
   },
 })
 
